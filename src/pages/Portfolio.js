@@ -1,19 +1,50 @@
 import React from "react";
-import { MasonryOut, MasonryItem } from "../styled/styledPortfolio";
-import Masonry from "react-masonry-component";
+import ScrollContainer from "react-indiana-drag-scroll";
+import {
+    PortfolioCard,
+    PortfolioTitle,
+    PortfolioContainer,
+} from "../styled/styledPortfolio";
 function Portfolio() {
-    const masonryOptions = {
-        fitWidth: true,
-    };
     return (
-        <MasonryOut>
-            <Masonry className="masonryIn" options={masonryOptions}>
-                <MasonryItem>My Element 1</MasonryItem>
-                <MasonryItem>My Element 2</MasonryItem>
-                <MasonryItem>My Element 3</MasonryItem>
-                <MasonryItem>My Element 4</MasonryItem>
-            </Masonry>
-        </MasonryOut>
+        <PortfolioContainer>
+            <PortfolioTitle>Web design</PortfolioTitle>
+            <ScrollContainer className="scroll-container">
+                <PortfolioCard>Portfolio 1</PortfolioCard>
+                <PortfolioCard>Portfolio 2</PortfolioCard>
+                <PortfolioCard>Portfolio 3</PortfolioCard>
+                <PortfolioCard>Portfolio 4</PortfolioCard>
+                <PortfolioCard>Portfolio 5</PortfolioCard>
+                <PortfolioCard>Portfolio 6</PortfolioCard>
+                <PortfolioCard>Portfolio 7</PortfolioCard>
+                <PortfolioCard>Portfolio 8</PortfolioCard>
+                <PortfolioCard>Portfolio 9</PortfolioCard>
+            </ScrollContainer>
+            <PortfolioTitle>FrameWork</PortfolioTitle>
+            <ScrollContainer className="scroll-container">
+                <PortfolioCard>Portfolio 1</PortfolioCard>
+                <PortfolioCard>Portfolio 2</PortfolioCard>
+                <PortfolioCard>Portfolio 3</PortfolioCard>
+                <PortfolioCard>Portfolio 4</PortfolioCard>
+                <PortfolioCard>Portfolio 5</PortfolioCard>
+                <PortfolioCard>Portfolio 6</PortfolioCard>
+                <PortfolioCard>Portfolio 7</PortfolioCard>
+                <PortfolioCard>Portfolio 8</PortfolioCard>
+                <PortfolioCard>Portfolio 9</PortfolioCard>
+            </ScrollContainer>
+            <PortfolioTitle>Others </PortfolioTitle>
+            <ScrollContainer className="scroll-container">
+                <PortfolioCard>Portfolio 1</PortfolioCard>
+                <PortfolioCard>Portfolio 2</PortfolioCard>
+                <PortfolioCard>Portfolio 3</PortfolioCard>
+                <PortfolioCard>Portfolio 4</PortfolioCard>
+                <PortfolioCard>Portfolio 5</PortfolioCard>
+                <PortfolioCard>Portfolio 6</PortfolioCard>
+                <PortfolioCard>Portfolio 7</PortfolioCard>
+                <PortfolioCard>Portfolio 8</PortfolioCard>
+                <PortfolioCard>Portfolio 9</PortfolioCard>
+            </ScrollContainer>
+        </PortfolioContainer>
     );
 }
 

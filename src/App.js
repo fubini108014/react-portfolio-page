@@ -1,12 +1,7 @@
 import React from "react";
-import {
-    Layout,
-    Sider,
-    Header,
-    Content,
-    Footer,
-    Right,
-} from "./styled/styledApp";
+import { Layout, LeftSide, Content, RightSide } from "./styled/styledApp";
+import Footer from "./pages/component/Footer";
+import Header from "./pages/component/Header";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Skill from "./pages/Skill";
@@ -17,29 +12,29 @@ function App() {
     return (
         <Router basename={process.env.PUBLIC_URL}>
             <Layout>
-                <Sider>
-                    <h1>Sider</h1>
-                    <ul>
-                        <li>
-                            <Link to="/">Home</Link>
-                        </li>
-                        <li>
-                            <Link to="/about">About</Link>
-                        </li>
-                        <li>
-                            <Link to="/skill">skill</Link>
-                        </li>
-                        <li>
-                            <Link to="/portfolio">portfolio</Link>
-                        </li>
-                        <li>
-                            <Link to="/contact">contact</Link>
-                        </li>
-                    </ul>
-                </Sider>
-                <Right>
-                    <Header>Header</Header>
-                    <Content>
+                <Header />
+                <Content>
+                    <LeftSide>
+                        <h1>Sider</h1>
+                        <ul>
+                            <li>
+                                <Link to="/">Home</Link>
+                            </li>
+                            <li>
+                                <Link to="/about">About</Link>
+                            </li>
+                            <li>
+                                <Link to="/skill">skill</Link>
+                            </li>
+                            <li>
+                                <Link to="/portfolio">portfolio</Link>
+                            </li>
+                            <li>
+                                <Link to="/contact">contact</Link>
+                            </li>
+                        </ul>
+                    </LeftSide>
+                    <RightSide>
                         <Switch>
                             <Route exact path="/" component={() => <Home />} />
                             <Route path="/about" component={() => <About />} />
@@ -56,9 +51,9 @@ function App() {
                                 component={() => <div>404 Not found </div>}
                             />
                         </Switch>
-                    </Content>
-                    <Footer>Footer</Footer>
-                </Right>
+                    </RightSide>
+                </Content>
+                <Footer />
             </Layout>
         </Router>
     );

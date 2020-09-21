@@ -15,46 +15,40 @@ export const Layout = styled.div`
     background-size: auto;
     background-position: center;
     background-size: cover;
+    flex-direction: column;
 `;
 
-export const Sider = styled.div`
+export const LeftSide = styled.div`
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid #000;
+    box-sizing: border-box;
     color: #fff;
     width: 20%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
+    & ul {
+        padding: 0;
+    }
     & li {
         list-style-type: none;
+        margin: 5px;
     }
+
     & a {
         color: #fff;
     }
 `;
 
-export const Right = styled.div`
-    height: 100%;
+export const RightSide = styled.div`
     width: 80%;
     display: flex;
     flex-direction: column;
 `;
 
-export const Header = styled.div`
-    height: 10%;
-    font-size: 2rem;
-    display: flex;
-    color: #fff;
-    justify-content: center;
-    align-items: center;
-`;
 export const Content = styled.div`
     height: 80%;
-`;
-export const Footer = styled.div`
-    color: #fff;
-    height: 10%;
-    font-size: 2rem;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
+    display: flex;
+    flex-direction: row;
 `;
