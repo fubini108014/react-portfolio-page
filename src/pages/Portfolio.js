@@ -1,48 +1,27 @@
 import React from "react";
 import ScrollContainer from "react-indiana-drag-scroll";
-import {
-    PortfolioCard,
-    PortfolioTitle,
-    PortfolioContainer,
-} from "../styled/styledPortfolio";
+import PortfolioCard from "./component/PortfolioCard";
+import { PortfolioTitle, PortfolioContainer } from "../styled/styledPortfolio";
 function Portfolio() {
     return (
         <PortfolioContainer>
             <PortfolioTitle>Web design</PortfolioTitle>
             <ScrollContainer className="scroll-container">
-                <PortfolioCard>Portfolio 1</PortfolioCard>
-                <PortfolioCard>Portfolio 2</PortfolioCard>
-                <PortfolioCard>Portfolio 3</PortfolioCard>
-                <PortfolioCard>Portfolio 4</PortfolioCard>
-                <PortfolioCard>Portfolio 5</PortfolioCard>
-                <PortfolioCard>Portfolio 6</PortfolioCard>
-                <PortfolioCard>Portfolio 7</PortfolioCard>
-                <PortfolioCard>Portfolio 8</PortfolioCard>
-                <PortfolioCard>Portfolio 9</PortfolioCard>
+                {["A", "B", "C", "D", "E", "F", "G", "H", "I"].map((item) => (
+                    <PortfolioCard text={`Portfolio ${item}`} />
+                ))}
             </ScrollContainer>
-            <PortfolioTitle>FrameWork</PortfolioTitle>
+            <PortfolioTitle>ReactJS</PortfolioTitle>
             <ScrollContainer className="scroll-container">
-                <PortfolioCard>Portfolio 1</PortfolioCard>
-                <PortfolioCard>Portfolio 2</PortfolioCard>
-                <PortfolioCard>Portfolio 3</PortfolioCard>
-                <PortfolioCard>Portfolio 4</PortfolioCard>
-                <PortfolioCard>Portfolio 5</PortfolioCard>
-                <PortfolioCard>Portfolio 6</PortfolioCard>
-                <PortfolioCard>Portfolio 7</PortfolioCard>
-                <PortfolioCard>Portfolio 8</PortfolioCard>
-                <PortfolioCard>Portfolio 9</PortfolioCard>
+                {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => (
+                    <PortfolioCard text={`Portfolio ${item}`} />
+                ))}
             </ScrollContainer>
             <PortfolioTitle>Others </PortfolioTitle>
             <ScrollContainer className="scroll-container">
-                <PortfolioCard>Portfolio 1</PortfolioCard>
-                <PortfolioCard>Portfolio 2</PortfolioCard>
-                <PortfolioCard>Portfolio 3</PortfolioCard>
-                <PortfolioCard>Portfolio 4</PortfolioCard>
-                <PortfolioCard>Portfolio 5</PortfolioCard>
-                <PortfolioCard>Portfolio 6</PortfolioCard>
-                <PortfolioCard>Portfolio 7</PortfolioCard>
-                <PortfolioCard>Portfolio 8</PortfolioCard>
-                <PortfolioCard>Portfolio 9</PortfolioCard>
+                {["a", "b", "c", "d", "e", "f", "g", "h", "i"].map((item) => (
+                    <PortfolioCard text={`Portfolio ${item}`} />
+                ))}
             </ScrollContainer>
         </PortfolioContainer>
     );

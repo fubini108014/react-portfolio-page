@@ -1,5 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import FacebookIcon from "@material-ui/icons/Facebook";
+import InstagramIcon from "@material-ui/icons/Instagram";
+import TwitterIcon from "@material-ui/icons/Twitter";
+import SmsIcon from "@material-ui/icons/Sms";
 export const FooterWapper = styled.div`
     background-color: rgba(0, 0, 0, 0.3);
     border: 1px solid #000;
@@ -28,6 +32,10 @@ export const IconGroup = styled.div`
     font-size: 1rem;
     justify-content: center;
     align-items: center;
+    & .IconItem {
+        margin: 5px;
+        cursor: pointer;
+    }
 `;
 
 export const MessageMe = styled.div`
@@ -36,14 +44,24 @@ export const MessageMe = styled.div`
     font-size: 1rem;
     justify-content: center;
     align-items: center;
+    & .SmsIconItem {
+        margin: 5px;
+        cursor: pointer;
+    }
 `;
 export default function Footer() {
     return (
         <FooterWapper>
             <CopyRight>© 2020 Josh Chang. All rights reserved.</CopyRight>
 
-            <IconGroup>facebook、instagram、line</IconGroup>
-            <MessageMe>MessageMe</MessageMe>
+            <IconGroup>
+                <FacebookIcon className="IconItem" />
+                <InstagramIcon className="IconItem" />
+                <TwitterIcon className="IconItem" />
+            </IconGroup>
+            <MessageMe>
+                <SmsIcon className="SmsIconItem" />
+            </MessageMe>
         </FooterWapper>
     );
 }

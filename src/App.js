@@ -15,7 +15,6 @@ function App() {
                 <Header />
                 <Content>
                     <LeftSide>
-                        <h1>Sider</h1>
                         <ul>
                             <li>
                                 <Link to="/">Home</Link>
