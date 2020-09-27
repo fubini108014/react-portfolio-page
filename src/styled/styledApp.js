@@ -39,16 +39,26 @@ export const LeftSide = styled.div`
     & a {
         color: #fff;
     }
+
+    @media screen and (max-width: 760px) {
+        display: none;
+    }
 `;
 
 export const RightSide = styled.div`
     width: 80%;
     display: flex;
     flex-direction: column;
+    @media screen and (max-width: 760px) {
+        width: 100%;
+    }
 `;
 
 export const Content = styled.div`
     height: 80%;
     display: flex;
     flex-direction: row;
+    @media screen and (max-width: 760px) {
+        height: 84%;
+    }
 `;

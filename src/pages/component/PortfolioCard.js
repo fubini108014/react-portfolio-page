@@ -4,9 +4,44 @@ import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
-import DialogTitle from "@material-ui/core/DialogTitle";
+import MuiDialogTitle from "@material-ui/core/DialogTitle";
 import VisibilityIcon from "@material-ui/icons/Visibility";
 import { ProCardContainer, Description } from "../../styled/styledPortfolio";
+import { withStyles } from "@material-ui/core/styles";
+import IconButton from "@material-ui/core/IconButton";
+import CloseIcon from "@material-ui/icons/Close";
+import Typography from "@material-ui/core/Typography";
+
+const styles = (theme) => ({
+    root: {
+        margin: 0,
+        padding: theme.spacing(2),
+    },
+    closeButton: {
+        position: "absolute",
+        right: theme.spacing(1),
+        top: theme.spacing(1),
+        color: theme.palette.grey[500],
+    },
+});
+
+const DialogTitle = withStyles(styles)((props) => {
+    const { children, onClose, classes, ...other } = props;
+    return (
+        <MuiDialogTitle disableTypography className={classes.root} {...other}>
+            <Typography variant="h6">{children}</Typography>
+            {onClose ? (
+                <IconButton
+                    aria-label="close"
+                    className={classes.closeButton}
+                    onClick={onClose}
+                >
+                    <CloseIcon />
+                </IconButton>
+            ) : null}
+        </MuiDialogTitle>
+    );
+});
 
 function PortfolioCard({ text = "" }) {
     const [open, setOpen] = React.useState(false);
@@ -40,7 +75,9 @@ function PortfolioCard({ text = "" }) {
                 aria-labelledby="scroll-dialog-title"
                 aria-describedby="scroll-dialog-description"
             >
-                <DialogTitle id="scroll-dialog-title">專案名稱</DialogTitle>
+                <DialogTitle id="scroll-dialog-title" onClose={handleClose}>
+                    專案名稱
+                </DialogTitle>
                 <DialogContent dividers={true}>
                     <DialogContentText
                         id="scroll-dialog-description"
@@ -57,10 +94,7 @@ function PortfolioCard({ text = "" }) {
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose} color="primary">
-                        Demo
-                    </Button>
-                    <Button onClick={handleClose} color="primary">
-                        Exit
+                        Demo Site
                     </Button>
                 </DialogActions>
             </Dialog>

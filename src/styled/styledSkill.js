@@ -21,6 +21,7 @@ export const itemCard = styled.div`
 `;
 
 export const MasonryOut = styled.div`
+    overflow-y: auto;
     & .masonryIn {
         margin: 0 auto;
     }

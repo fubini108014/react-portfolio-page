@@ -7,21 +7,34 @@ function Portfolio() {
         <PortfolioContainer>
             <PortfolioTitle>Web design</PortfolioTitle>
             <ScrollContainer className="scroll-container">
-                {["A", "B", "C", "D", "E", "F", "G", "H", "I"].map((item) => (
-                    <PortfolioCard text={`Portfolio ${item}`} />
-                ))}
+                {["A", "B", "C", "D", "E", "F", "G", "H", "I"].map(
+                    (item, idx) => (
+                        <PortfolioCard
+                            key={`${idx}_1`}
+                            text={`Portfolio ${item}`}
+                        />
+                    )
+                )}
             </ScrollContainer>
             <PortfolioTitle>ReactJS</PortfolioTitle>
             <ScrollContainer className="scroll-container">
-                {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => (
-                    <PortfolioCard text={`Portfolio ${item}`} />
+                {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item, idx) => (
+                    <PortfolioCard
+                        key={`${idx}_2`}
+                        text={`Portfolio ${item}`}
+                    />
                 ))}
             </ScrollContainer>
             <PortfolioTitle>Others </PortfolioTitle>
             <ScrollContainer className="scroll-container">
-                {["a", "b", "c", "d", "e", "f", "g", "h", "i"].map((item) => (
-                    <PortfolioCard text={`Portfolio ${item}`} />
-                ))}
+                {["a", "b", "c", "d", "e", "f", "g", "h", "i"].map(
+                    (item, idx) => (
+                        <PortfolioCard
+                            key={`${idx}_3`}
+                            text={`Portfolio ${item}`}
+                        />
+                    )
+                )}
             </ScrollContainer>
         </PortfolioContainer>
     );
