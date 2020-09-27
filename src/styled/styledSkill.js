@@ -22,21 +22,54 @@ export const itemCard = styled.div`
 
 export const MasonryOut = styled.div`
     overflow-y: auto;
+    padding: 5px 10px;
+    & .container {
+        .overflow: hidden;
+    }
     & .masonryIn {
         margin: 0 auto;
     }
-`;
-export const MasonryItem = styled.div`
-    background: hsla(0, 0%, 100%, 0.35);
-    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
-        rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px;
-    margin: 0.5rem;
-    border-radius: 3px;
-    height: 200px;
-    display: flex;
-    flex: 1 0 calc(33% - 16px);
-    min-width: 300px;
-    width: calc(33% - 16px);
-    justify-content: center;
-    align-items: center;
+    & .masonryItem {
+        background: hsla(0, 0%, 100%, 0.4);
+        box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px,
+            rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px,
+            rgba(0, 0, 0, 0.07) 0px 8px 16px;
+        border-radius: 10px;
+        margin: 5px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+        width: 160px;
+        &:hover {
+            background: hsla(0, 0%, 100%, 0.75);
+            box-shadow: rgba(0, 0, 0, 0.27) 0px 1px 2px,
+                rgba(0, 0, 0, 0.27) 0px 2px 4px, rgba(0, 0, 0, 0.27) 0px 4px 8px,
+                rgba(0, 0, 0, 0.27) 0px 8px 16px;
+        }
+        @media screen and (max-width: 450px) {
+            width: 100%;
+        }
+    }
+    & .grid-item1 {
+        width: 330px;
+    }
+    & .grid-item2 {
+        height: 160px;
+    }
+    & .grid-item3 {
+        height: 330px;
+        width: 330px;
+    }
+    & .grid-item4 {
+        height: 240px;
+    }
+    @media screen and (max-width: 450px) {
+        & .grid-item1,
+        & .grid-item2,
+        & .grid-item3,
+        & .grid-item4 {
+            width: 100%;
+        }
+    }
 `;

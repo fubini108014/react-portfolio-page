@@ -6,7 +6,7 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 import SmsIcon from "@material-ui/icons/Sms";
 export const FooterWapper = styled.div`
     background-color: rgba(0, 0, 0, 0.3);
-    border: 1px solid #0class00;
+    border: 1px solid #000;
     box-sizing: border-box;
     color: #fff;
     height: 10%;

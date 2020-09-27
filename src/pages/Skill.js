@@ -1,17 +1,35 @@
 import React from "react";
-import { MasonryOut, MasonryItem } from "../styled/styledSkill";
+import { MasonryOut } from "../styled/styledSkill";
 import Masonry from "react-masonry-component";
+import { motion } from "framer-motion";
+import clsx from "clsx";
+const animate = { y: [20, 13, 7, 0], opacity: [0, 0.4, 0.7, 1] };
+const transition = { times: [0, 0.4, 0.7, 1] };
 function Skill() {
     const masonryOptions = {
-        fitWidth: true,
+        //fitWidth: true,
+        itemSelector: ".masonryItem",
+        columnWidth: 160,
+        gutter: 10,
     };
     return (
         <MasonryOut>
             <Masonry className="masonryIn" options={masonryOptions}>
-                <MasonryItem>My Element 1</MasonryItem>
-                <MasonryItem>My Element 2</MasonryItem>
-                <MasonryItem>My Element 3</MasonryItem>
-                <MasonryItem>My Element 4</MasonryItem>
+                {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((el, idx) => (
+                    <motion.div
+                        className={clsx("masonryItem", {
+                            "grid-item1": idx === 2 || idx === 8,
+                            "grid-item2": idx === 0 || idx === 5,
+                            "grid-item3": idx === 4,
+                            "grid-item4": idx === 3,
+                        })}
+                        key={idx}
+                        animate={animate}
+                        transition={{ ...transition, delay: idx * 0.3 + 0.1 }}
+                    >
+                        Skill {el}
+                    </motion.div>
+                ))}
             </Masonry>
         </MasonryOut>
     );
