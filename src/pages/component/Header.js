@@ -4,6 +4,8 @@ import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import { MenuToggle } from "./sideMenu/MenuToggle";
 import HomeIcon from "@material-ui/icons/Home";
 import { Navigation } from "./sideMenu/Navigation";
+import Avatar from "@material-ui/core/Avatar";
+import headshot from "../../assets/img/chinphoto.jpg";
 import { Link } from "react-router-dom";
 import {
     HeaderWrapper,
@@ -30,7 +32,7 @@ const sidebar = {
         },
     }),
     closed: {
-        clipPath: "circle(17px at 28px 24px)",
+        clipPath: "circle(17px at 121px 24px)",
         transition: {
             delay: 0.5,
             type: "spring",
@@ -59,6 +61,15 @@ function Header() {
     return (
         <HeaderWrapper>
             <AccountBox>
+                <Avatar
+                    alt="Remy Sharp"
+                    className="accountIcon"
+                    src={headshot}
+                />
+                <AccountInfo>
+                    <div className="myName">Josh Chang</div>
+                    <div className="myJobs">Front-end Developer</div>
+                </AccountInfo>
                 <MotionMenu>
                     <motion.nav
                         initial={false}
@@ -76,11 +87,6 @@ function Header() {
                         />
                     </motion.nav>
                 </MotionMenu>
-                <AccountCircleIcon className="accountIcon" />
-                <AccountInfo>
-                    <div className="myName">Josh Chang</div>
-                    <div className="myJobs">Front-end Developer</div>
-                </AccountInfo>
             </AccountBox>
             <Others>
                 <Link to={"/"}>

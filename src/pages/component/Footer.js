@@ -46,7 +46,7 @@ export const IconGroup = styled.div`
 
 export const MessageMe = styled.div`
     color: #fff;
-    flex: 0 0 100px;
+    margin: 0 10px;
     font-size: 1rem;
     justify-content: center;
     align-items: center;

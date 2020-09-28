@@ -4,7 +4,7 @@ import Footer from "./pages/component/Footer";
 import Header from "./pages/component/Header";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Skill from "./pages/Skill";
+import Service from "./pages/Service";
 import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/Contact";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
@@ -23,7 +23,7 @@ function App() {
                                 <Link to="/about">About</Link>
                             </li>
                             <li>
-                                <Link to="/skill">skill</Link>
+                                <Link to="/service">Service</Link>
                             </li>
                             <li>
                                 <Link to="/portfolio">portfolio</Link>
@@ -37,7 +37,10 @@ function App() {
                         <Switch>
                             <Route exact path="/" component={() => <Home />} />
                             <Route path="/about" component={() => <About />} />
-                            <Route path="/skill" component={() => <Skill />} />
+                            <Route
+                                path="/service"
+                                component={() => <Service />}
+                            />
                             <Route
                                 path="/portfolio"
                                 component={() => <Portfolio />}

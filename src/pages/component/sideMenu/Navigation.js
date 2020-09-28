@@ -39,7 +39,7 @@ export const Navigation = ({ linkEvent }) => (
 const itemLinks = [
     { link: "/", text: "Home", icon: <HomeIcon /> },
     { link: "/about", text: "About", icon: <InfoIcon /> },
-    { link: "/skill", text: "Skill", icon: <RedditIcon /> },
+    { link: "/service", text: "Service", icon: <RedditIcon /> },
     { link: "/portfolio", text: "Portfolio", icon: <BugReportIcon /> },
     { link: "/contact", text: "Contact", icon: <ContactsIcon /> },
 ];

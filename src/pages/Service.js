@@ -1,11 +1,11 @@
 import React from "react";
-import { MasonryOut } from "../styled/styledSkill";
+import { MasonryOut } from "../styled/styledService";
 import Masonry from "react-masonry-component";
 import { motion } from "framer-motion";
 import clsx from "clsx";
 const animate = { y: [20, 13, 7, 0], opacity: [0, 0.4, 0.7, 1] };
 const transition = { times: [0, 0.4, 0.7, 1] };
-function Skill() {
+function Service() {
     const masonryOptions = {
         //fitWidth: true,
         itemSelector: ".masonryItem",
@@ -27,7 +27,7 @@ function Skill() {
                         animate={animate}
                         transition={{ ...transition, delay: idx * 0.3 + 0.1 }}
                     >
-                        Skill {el}
+                        Service {el}
                     </motion.div>
                 ))}
             </Masonry>
@@ -35,4 +35,4 @@ function Skill() {
     );
 }
 
-export default Skill;
+export default Service;

@@ -18,13 +18,54 @@ export const AccountBox = styled.div`
     justify-content: center;
     align-items: center;
     & .accountIcon {
-        margin: 5px;
-        font-size: 2rem;
-        @media screen and (max-width: 760px) {
-            margin-left: 50px;
+        margin: 7px;
+        padding: 4px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            bottom: 4px;
+            left: 4px;
+            border-radius: 50%;
+            background: linear-gradient(
+                45deg,
+                #ffd800,
+                #ff5520,
+                #750cf2,
+                #0cbcf2
+            );
+            z-index: 2;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            background: linear-gradient(
+                45deg,
+                #ffd800,
+                #ff5520,
+                #750cf2,
+                #0cbcf2
+            );
+            z-index: 1;
+            filter: blur(40px);
+        }
+
+        & img {
+            z-index: 3;
+            border-radius: 50%;
+            height: 90%;
+            width: 90%;
         }
     }
 `;
+
 export const MotionMenu = styled.div`
     z-index: 1;
     display: none;
@@ -35,15 +76,16 @@ export const MotionMenu = styled.div`
     & nav {
         position: absolute;
         top: 0;
-        left: 0;
+        right: 0;
         bottom: 0;
         width: 150px;
+        max-height: 100%;
     }
 
     & .background {
         position: absolute;
         top: 0;
-        left: 0;
+        right: 0;
         bottom: 0;
         width: 150px;
         background: #ececec;
@@ -57,7 +99,7 @@ export const MotionMenu = styled.div`
         cursor: pointer;
         position: absolute;
         top: 12px;
-        left: 10px;
+        right: 12px;
         width: 35px;
         height: 35px;
         border-radius: 50%;
