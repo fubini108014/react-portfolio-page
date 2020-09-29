@@ -30,7 +30,8 @@ export const ProCardContainer = styled.div`
 
     margin: 5px;
     background-color: #113679;
-    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.32),
+        0px 3px 4px 0px rgba(0, 0, 0, 0.24), 0px 1px 8px 0px rgba(0, 0, 0, 0.2);
     &::after {
         content: "";
         display: block;

@@ -1,6 +1,5 @@
 import React from "react";
 import { motion, useCycle } from "framer-motion";
-import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import { MenuToggle } from "./sideMenu/MenuToggle";
 import HomeIcon from "@material-ui/icons/Home";
 import { Navigation } from "./sideMenu/Navigation";
