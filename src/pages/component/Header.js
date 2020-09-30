@@ -82,6 +82,7 @@ function Header() {
 
                         <MenuToggle
                             className="MenuBtn"
+                            stroke="rgb(239 240 245)"
                             toggle={() => toggleOpen()}
                         />
                     </motion.nav>

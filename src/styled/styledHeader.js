@@ -86,7 +86,12 @@ export const MotionMenu = styled.div`
         right: 0;
         bottom: 0;
         width: 150px;
-        background: #ececec;
+        background: linear-gradient(
+            198deg,
+            rgba(65, 149, 255, 1) 0%,
+            rgba(30, 83, 186, 1) 53%,
+            rgba(11, 37, 87, 1) 100%
+        );
     }
     & .MenuBtn {
         outline: none;
