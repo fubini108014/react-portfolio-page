@@ -24,17 +24,16 @@ export const AccountBox = styled.div`
         &::after {
             content: "";
             position: absolute;
-            top: 4px;
-            right: 4px;
-            bottom: 4px;
-            left: 4px;
+            top: 3px;
+            right: 3px;
+            bottom: 3px;
+            left: 3px;
             border-radius: 50%;
             background: linear-gradient(
-                45deg,
-                #ffd800,
-                #ff5520,
-                #750cf2,
-                #0cbcf2
+                225deg,
+                rgba(45, 178, 253, 1) 0%,
+                rgba(47, 97, 187, 1) 49%,
+                rgba(6, 34, 71, 1) 100%
             );
             z-index: 2;
         }
@@ -47,11 +46,10 @@ export const AccountBox = styled.div`
             bottom: 0px;
             left: 0px;
             background: linear-gradient(
-                45deg,
-                #ffd800,
-                #ff5520,
-                #750cf2,
-                #0cbcf2
+                225deg,
+                rgba(45, 178, 253, 1) 0%,
+                rgba(47, 97, 187, 1) 49%,
+                rgba(6, 34, 71, 1) 100%
             );
             z-index: 1;
             filter: blur(40px);
