@@ -11,6 +11,7 @@ export const HeaderWrapper = styled.div`
     align-items: center;
     @media screen and (max-width: 760px) {
         height: 8%;
+        min-height: 50px;
     }
 `;
 export const AccountBox = styled.div`
@@ -87,7 +88,7 @@ export const MotionMenu = styled.div`
         bottom: 0;
         width: 150px;
         background: linear-gradient(
-            198deg,
+            121deg,
             rgba(65, 149, 255, 1) 0%,
             rgba(30, 83, 186, 1) 53%,
             rgba(11, 37, 87, 1) 100%
@@ -125,30 +126,52 @@ export const MotionMenu = styled.div`
     ul {
         padding: 20px;
         position: absolute;
-        top: 100px;
-        width: 110px;
+        top: 40px;
+        width: 100px;
     }
 
     li {
         list-style: none;
         margin-bottom: 20px;
+        height: 70px;
         display: flex;
         align-items: center;
         cursor: pointer;
-    }
-    .icon-placeholder {
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        flex: 20px 0;
-        margin-right: 20px;
-    }
+        flex-direction: column;
+        &:hover {
+            background: radial-gradient(
+                circle,
+                rgba(207, 204, 220, 0.4) 0%,
+                rgba(207, 204, 220, 0.5) 50%,
+                rgba(207, 204, 220, 0.6) 100%
+            );
+            border: 1px solid #c6c2da91;
+            & .icon-placeholder,
+            & .text-placeholder {
+                color: #fff !important;
+            }
+        }
 
-    .text-placeholder {
-        border-radius: 5px;
-        width: 100px;
-        height: 20px;
-        flex: 1;
+        & .icon-placeholder {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            flex: 1;
+            margin-bottom: 7px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+        & .text-placeholder {
+            border-radius: 5px;
+            width: 100px;
+            height: 20px;
+            flex: 1;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
     }
 `;
 export const Others = styled.div`

@@ -58,7 +58,5 @@ export const Content = styled.div`
     height: 80%;
     display: flex;
     flex-direction: row;
-    @media screen and (max-width: 760px) {
-        height: 84%;
-    }
+    flex: 1;
 `;

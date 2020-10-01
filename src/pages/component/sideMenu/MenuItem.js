@@ -22,7 +22,7 @@ const variants = {
 const colors = ["#FF008C", "#D309E1", "#9C1AFF", "#7700FF", "#4400FF"];
 
 export const MenuItem = ({ i, link = "", text = "", icon, onClick }) => {
-    const style = { color: colors[i] };
+    const style = { color: "rgb(176 181 204)" };
     return (
         <Link to={link} style={{ textDecoration: "none" }} onClick={onClick}>
             <motion.li
