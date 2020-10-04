@@ -7,11 +7,11 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import SmsIcon from "@material-ui/icons/Sms";
-import MessageCard from "./MessageMeCard";
+import MessageCard from "./MessageCard/MessageMeCard";
 import Dialog from "@material-ui/core/Dialog";
 import DialogContent from "@material-ui/core/DialogContent";
 import useRWD from "../customhooks/useRWD";
-export const FooterWapper = styled.div`
+const FooterWapper = styled.div`
     background-color: rgba(0, 0, 0, 0.3);
     border: 1px solid #000;
     box-sizing: border-box;
@@ -40,7 +40,7 @@ export const CopyRight = styled.div`
     }
 `;
 
-export const IconGroup = styled.div`
+const IconGroup = styled.div`
     color: #fff;
     flex: 0 0 200px;
     font-size: 1rem;
@@ -52,7 +52,7 @@ export const IconGroup = styled.div`
     }
 `;
 
-export const MessageMe = styled.div`
+const MessageMe = styled.div`
     color: #fff;
     margin: 0 10px;
     font-size: 1rem;
@@ -118,7 +118,7 @@ export default function Footer() {
                         horizontal: "center",
                     }}
                 >
-                    <MessageCard />
+                    <MessageCard onClose={handleClose} />
                 </Popover>
             ) : (
                 <Dialog
@@ -132,7 +132,7 @@ export default function Footer() {
                         className="messageCardDialog"
                         dividers={false}
                     >
-                        <MessageCard elevation={0} />
+                        <MessageCard elevation={0} onClose={handleClose} />
                     </DialogContent>
                 </Dialog>
             )}
