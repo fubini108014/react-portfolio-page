@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/react-portfolio-page/static/css/main.69eda509.chunk.css",
-    "main.js": "/react-portfolio-page/static/js/main.b6106acf.chunk.js",
-    "main.js.map": "/react-portfolio-page/static/js/main.b6106acf.chunk.js.map",
+    "main.js": "/react-portfolio-page/static/js/main.60451993.chunk.js",
+    "main.js.map": "/react-portfolio-page/static/js/main.60451993.chunk.js.map",
     "runtime-main.js": "/react-portfolio-page/static/js/runtime-main.31f9dc6d.js",
     "runtime-main.js.map": "/react-portfolio-page/static/js/runtime-main.31f9dc6d.js.map",
-    "static/js/2.f888dbf1.chunk.js": "/react-portfolio-page/static/js/2.f888dbf1.chunk.js",
-    "static/js/2.f888dbf1.chunk.js.map": "/react-portfolio-page/static/js/2.f888dbf1.chunk.js.map",
+    "static/js/2.15a6ccad.chunk.js": "/react-portfolio-page/static/js/2.15a6ccad.chunk.js",
+    "static/js/2.15a6ccad.chunk.js.map": "/react-portfolio-page/static/js/2.15a6ccad.chunk.js.map",
     "index.html": "/react-portfolio-page/index.html",
-    "precache-manifest.c99a8b46fa38951387905c425f89a378.js": "/react-portfolio-page/precache-manifest.c99a8b46fa38951387905c425f89a378.js",
+    "precache-manifest.24cfd9de5af3d8de39ca465b250cdbba.js": "/react-portfolio-page/precache-manifest.24cfd9de5af3d8de39ca465b250cdbba.js",
     "service-worker.js": "/react-portfolio-page/service-worker.js",
     "static/css/main.69eda509.chunk.css.map": "/react-portfolio-page/static/css/main.69eda509.chunk.css.map",
-    "static/js/2.f888dbf1.chunk.js.LICENSE.txt": "/react-portfolio-page/static/js/2.f888dbf1.chunk.js.LICENSE.txt",
-    "static/media/animal01.jpg": "/react-portfolio-page/static/media/animal01.52fcc655.jpg",
+    "static/js/2.15a6ccad.chunk.js.LICENSE.txt": "/react-portfolio-page/static/js/2.15a6ccad.chunk.js.LICENSE.txt",
     "static/media/chinphoto.jpg": "/react-portfolio-page/static/media/chinphoto.b51014de.jpg",
-    "static/media/pexels-simon-migaj-1920x1212.jpg": "/react-portfolio-page/static/media/pexels-simon-migaj-1920x1212.5923d5f6.jpg"
+    "static/media/pexels-simon-migaj-1920x1212.jpg": "/react-portfolio-page/static/media/pexels-simon-migaj-1920x1212.5923d5f6.jpg",
+    "static/media/pexels-snapwire-292426.jpg": "/react-portfolio-page/static/media/pexels-snapwire-292426.30a57ed5.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.31f9dc6d.js",
-    "static/js/2.f888dbf1.chunk.js",
+    "static/js/2.15a6ccad.chunk.js",
     "static/css/main.69eda509.chunk.css",
-    "static/js/main.b6106acf.chunk.js"
+    "static/js/main.60451993.chunk.js"
   ]
 }
