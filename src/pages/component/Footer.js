@@ -22,13 +22,14 @@ const FooterWapper = styled.div`
     display: inline-flex;
     justify-content: space-between;
     align-items: center;
+
     @media screen and (max-width: 760px) {
         height: 8%;
         min-height: 50px;
     }
 `;
 
-export const CopyRight = styled.div`
+const CopyRight = styled.div`
     color: #fff;
     flex: 0 0 300px;
     margin: 5px;
@@ -43,6 +44,7 @@ export const CopyRight = styled.div`
 const IconGroup = styled.div`
     color: #fff;
     flex: 0 0 200px;
+    margin: 0 7px;
     font-size: 1rem;
     justify-content: center;
     align-items: center;
@@ -71,6 +73,7 @@ const MessageMe = styled.div`
         }
     }
 `;
+
 export default function Footer() {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const device = useRWD();
@@ -87,8 +90,20 @@ export default function Footer() {
             <CopyRight>© 2020 Josh Chang. All rights reserved.</CopyRight>
 
             <IconGroup>
-                <FacebookIcon className="IconItem" />
-                <InstagramIcon className="IconItem" />
+                <FacebookIcon
+                    className="IconItem"
+                    onClick={() =>
+                        window.open(
+                            "https://www.facebook.com/profile.php?id=100000191509477"
+                        )
+                    }
+                />
+                <InstagramIcon
+                    className="IconItem"
+                    onClick={() =>
+                        window.open("https://www.instagram.com/ga576895/")
+                    }
+                />
                 <TwitterIcon className="IconItem" />
             </IconGroup>
 
@@ -124,14 +139,11 @@ export default function Footer() {
                 <Dialog
                     open={Boolean(anchorEl)}
                     onClose={handleClose}
-                    scroll="paper"
+                    scroll="body"
                     aria-labelledby="scroll-dialog-title"
                     aria-describedby="scroll-dialog-description"
                 >
-                    <DialogContent
-                        className="messageCardDialog"
-                        dividers={false}
-                    >
+                    <DialogContent style={{ padding: "0" }} dividers={false}>
                         <MessageCard elevation={0} onClose={handleClose} />
                     </DialogContent>
                 </Dialog>

@@ -66,7 +66,7 @@ export const AccountBox = styled.div`
 `;
 
 export const MotionMenu = styled.div`
-    z-index: 1;
+    z-index: 10;
     display: none;
     @media screen and (max-width: 760px) {
         display: flex;
@@ -185,6 +185,9 @@ export const Others = styled.div`
     & .homeIcon {
         margin-right: 15px;
         cursor: pointer;
+    }
+    @media screen and (max-width: 760px) {
+        display: none;
     }
 `;
 export const AccountInfo = styled.div`
