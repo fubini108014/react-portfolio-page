@@ -54,6 +54,20 @@ function Portfolio() {
                     )}
                 </ScrollContainer>
             </motion.div>
+            <motion.div
+                animate={animate}
+                transition={{ ...transition, delay: 0.9 }}
+            >
+                <PortfolioTitle>練習 </PortfolioTitle>
+                <ScrollContainer className="scroll-container">
+                    {["One", "Two", "Three", "Four"].map((item, idx) => (
+                        <PortfolioCard
+                            key={`${idx}_3`}
+                            text={`Portfolio ${item}`}
+                        />
+                    ))}
+                </ScrollContainer>
+            </motion.div>
         </PortfolioContainer>
     );
 }

@@ -11,6 +11,7 @@ import MessageCard from "./MessageCard/MessageMeCard";
 import Dialog from "@material-ui/core/Dialog";
 import DialogContent from "@material-ui/core/DialogContent";
 import useRWD from "../customhooks/useRWD";
+import QRCodeImg from "../../assets/img/QRcode.png";
 const FooterWapper = styled.div`
     background-color: rgba(0, 0, 0, 0.3);
     border: 1px solid #000;
@@ -74,6 +75,13 @@ const MessageMe = styled.div`
     }
 `;
 
+const QRcodeIcon = styled.div`
+    height: 24px;
+    width: 24px;
+    display: inline-flex;
+    background-size: cover;
+    background-image: url(${QRCodeImg});
+`;
 export default function Footer() {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const device = useRWD();
@@ -105,6 +113,7 @@ export default function Footer() {
                     }
                 />
                 <TwitterIcon className="IconItem" />
+                <QRcodeIcon className="IconItem" />
             </IconGroup>
 
             <MessageMe>
