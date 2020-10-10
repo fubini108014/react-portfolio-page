@@ -20,7 +20,7 @@ export const itemCard = styled.div`
     }
 `;
 
-export const MasonryOut = styled.div`
+export const ServiceContainer = styled.div`
     overflow-y: auto;
     padding: 5px 10px;
     & .container {

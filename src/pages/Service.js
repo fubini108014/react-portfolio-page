@@ -1,5 +1,5 @@
 import React from "react";
-import { MasonryOut } from "../styled/styledService";
+import { ServiceContainer } from "../styled/styledService";
 import Masonry from "react-masonry-component";
 import { motion } from "framer-motion";
 import clsx from "clsx";
@@ -13,7 +13,7 @@ function Service() {
         gutter: 10,
     };
     return (
-        <MasonryOut>
+        <ServiceContainer>
             <Masonry className="masonryIn" options={masonryOptions}>
                 {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((el, idx) => (
                     <motion.div
@@ -31,7 +31,7 @@ function Service() {
                     </motion.div>
                 ))}
             </Masonry>
-        </MasonryOut>
+        </ServiceContainer>
     );
 }
 

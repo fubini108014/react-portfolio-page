@@ -1,14 +1,17 @@
 import React from "react";
 import HoverRating from "./component/HoverRating";
+import TimeLine from "./component/TimeLine";
+import ChipGroup from "./component/ChipGroup";
 import styled from "styled-components";
-const AboutMeContent = styled.div`
-    color: #fff;
-    padding: 10px;
+const AboutContainer = styled.div`
     overflow-y: auto;
+    color: #fff;
 `;
-const RatingContainer = styled.div``;
+const RatingContainer = styled.div`
+    margin: 5px;
+`;
 const MyPic = styled.div`
-    margin: 5px 0;
+    margin: 5px;
     width: 200px;
     height: 250px;
     border: 1px solid #fff;
@@ -17,17 +20,17 @@ const MyPic = styled.div`
     align-items: center;
 `;
 const MyName = styled.div`
-    margin: 10px 0;
+    margin: 10px;
     font-size: 20px;
 `;
 
 const MyDesc = styled.div`
-    margin: 5px 0;
+    margin: 5px;
     font-size: 16px;
 `;
 function About() {
     return (
-        <AboutMeContent>
+        <AboutContainer>
             <h1>關於</h1>
             <MyPic>image</MyPic>
             <MyName>張 群 | Josh Chang</MyName>
@@ -35,8 +38,8 @@ function About() {
                 文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述。
             </MyDesc>
 
-            <h1>工作經歷</h1>
-            <h1>教育背景</h1>
+            <h1>經歷</h1>
+            <TimeLine />
             <h1>技能</h1>
             <RatingContainer>
                 <HoverRating text="Python" defalutValue={2.5} />
@@ -46,7 +49,8 @@ function About() {
                 <HoverRating text="HTML5/CSS3" defalutValue={4.5} />
             </RatingContainer>
             <h1>興趣</h1>
-        </AboutMeContent>
+            <ChipGroup />
+        </AboutContainer>
     );
 }
 
