@@ -4,14 +4,10 @@ import TimeLine from "./component/TimeLine";
 import ChipGroup from "./component/ChipGroup";
 import styled from "styled-components";
 const AboutContainer = styled.div`
-    overflow-y: auto;
     color: #fff;
 `;
-const RatingContainer = styled.div`
-    margin: 5px;
-`;
+const RatingContainer = styled.div``;
 const MyPic = styled.div`
-    margin: 5px;
     width: 200px;
     height: 250px;
     border: 1px solid #fff;
@@ -20,12 +16,10 @@ const MyPic = styled.div`
     align-items: center;
 `;
 const MyName = styled.div`
-    margin: 10px;
     font-size: 20px;
 `;
 
 const MyDesc = styled.div`
-    margin: 5px;
     font-size: 16px;
 `;
 function About() {

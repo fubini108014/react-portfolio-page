@@ -1,18 +1,15 @@
 import styled from "styled-components";
 
 export const PortfolioContainer = styled.div`
-    width: 100%;
-    overflow-y: auto;
     & .scroll-container {
         display: flex;
-        margin: 10px;
+        margin: 5px 0;
     }
 `;
 
 export const PortfolioTitle = styled.div`
     color: #fff;
     padding: 5px 0;
-    margin: 5px 15px;
     font-size: 1.2rem;
     border-bottom: 1px solid #fff;
 `;
@@ -27,7 +24,6 @@ export const ProCardContainer = styled.div`
     justify-content: center;
     align-items: center;
     color: #fff;
-
     margin: 5px;
     background-color: #113679;
     box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.32),
