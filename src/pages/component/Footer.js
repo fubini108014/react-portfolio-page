@@ -5,7 +5,7 @@ import Popover from "@material-ui/core/Popover";
 import Tooltip from "@material-ui/core/Tooltip";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
-import TwitterIcon from "@material-ui/icons/Twitter";
+import GitHubIcon from "@material-ui/icons/GitHub";
 import SmsIcon from "@material-ui/icons/Sms";
 import MessageCard from "./MessageCard/MessageMeCard";
 import Dialog from "@material-ui/core/Dialog";
@@ -112,7 +112,7 @@ export default function Footer() {
                         window.open("https://www.instagram.com/ga576895/")
                     }
                 />
-                <TwitterIcon className="IconItem" />
+                <GitHubIcon className="IconItem" />
                 <QRcodeIcon className="IconItem" />
             </IconGroup>
 

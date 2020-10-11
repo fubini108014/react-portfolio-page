@@ -13,27 +13,40 @@ import HotelIcon from "@material-ui/icons/Hotel";
 import RepeatIcon from "@material-ui/icons/Repeat";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
-
+import withWidth, { isWidthUp } from "@material-ui/core/withWidth";
 const useStyles = makeStyles((theme) => ({
     paper: {
         padding: "6px 16px",
+        textAlign: "left",
+    },
+    hide: { display: "none" },
+    show: { display: "block" },
+    dateInterval: {
+        margin: "11px 0",
     },
     secondaryTail: {
         backgroundColor: theme.palette.secondary.main,
     },
 }));
 
-export default function CustomizedTimeline() {
+function CustomizedTimeline(props) {
     const classes = useStyles();
-
+    const over_sm = isWidthUp("sm", props.width);
     return (
-        <Timeline align="alternate">
+        <Timeline align={over_sm ? "alternate" : "left"}>
             <TimelineItem>
-                <TimelineOppositeContent>
-                    <Typography variant="body2" color="textSecondary">
-                        9:30 am
+                <TimelineOppositeContent
+                    className={over_sm ? classes.show : classes.hide}
+                >
+                    <Typography
+                        variant="body2"
+                        color="initial"
+                        className={classes.dateInterval}
+                    >
+                        2019/07 ~
                     </Typography>
                 </TimelineOppositeContent>
+
                 <TimelineSeparator>
                     <TimelineDot>
                         <FastfoodIcon />
@@ -41,20 +54,34 @@ export default function CustomizedTimeline() {
                     <TimelineConnector />
                 </TimelineSeparator>
                 <TimelineContent>
+                    {!over_sm && (
+                        <Typography variant="body2" color="initial">
+                            2019/07 ~
+                        </Typography>
+                    )}
                     <Paper elevation={3} className={classes.paper}>
                         <Typography variant="h6" component="h1">
-                            Eat
+                            嘉實資訊股份有限公司
                         </Typography>
-                        <Typography>Because you need strength</Typography>
+                        <Typography>
+                            文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述
+                        </Typography>
                     </Paper>
                 </TimelineContent>
             </TimelineItem>
             <TimelineItem>
-                <TimelineOppositeContent>
-                    <Typography variant="body2" color="textSecondary">
-                        10:00 am
+                <TimelineOppositeContent
+                    className={over_sm ? classes.show : classes.hide}
+                >
+                    <Typography
+                        variant="body2"
+                        color="inherit"
+                        className={classes.dateInterval}
+                    >
+                        2018/09 ~ 2019/06
                     </Typography>
                 </TimelineOppositeContent>
+
                 <TimelineSeparator>
                     <TimelineDot color="primary">
                         <LaptopMacIcon />
@@ -62,15 +89,34 @@ export default function CustomizedTimeline() {
                     <TimelineConnector />
                 </TimelineSeparator>
                 <TimelineContent>
+                    {!over_sm && (
+                        <Typography variant="body2" color="inherit">
+                            2018/09 ~ 2019/06
+                        </Typography>
+                    )}
                     <Paper elevation={3} className={classes.paper}>
                         <Typography variant="h6" component="h1">
-                            Code
+                            鉅祥企業股份有限公司
                         </Typography>
-                        <Typography>Because it&apos;s awesome!</Typography>
+                        <Typography>
+                            文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述
+                        </Typography>
                     </Paper>
                 </TimelineContent>
             </TimelineItem>
             <TimelineItem>
+                <TimelineOppositeContent
+                    className={over_sm ? classes.show : classes.hide}
+                >
+                    <Typography
+                        variant="body2"
+                        color="initial"
+                        className={classes.dateInterval}
+                    >
+                        2015/09 ~ 2018/07
+                    </Typography>
+                </TimelineOppositeContent>
+
                 <TimelineSeparator>
                     <TimelineDot color="primary" variant="outlined">
                         <HotelIcon />
@@ -78,27 +124,51 @@ export default function CustomizedTimeline() {
                     <TimelineConnector className={classes.secondaryTail} />
                 </TimelineSeparator>
                 <TimelineContent>
+                    {!over_sm && (
+                        <Typography variant="body2" color="initial">
+                            2015/09 ~ 2018/07
+                        </Typography>
+                    )}
                     <Paper elevation={3} className={classes.paper}>
                         <Typography variant="h6" component="h1">
-                            Sleep
+                            政治大學 應用數學系 碩士
                         </Typography>
-                        <Typography>Because you need rest</Typography>
+                        <Typography>
+                            文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述
+                        </Typography>
                     </Paper>
                 </TimelineContent>
             </TimelineItem>
             <TimelineItem>
+                <TimelineOppositeContent
+                    className={over_sm ? classes.show : classes.hide}
+                >
+                    <Typography
+                        variant="body2"
+                        color="initial"
+                        className={classes.dateInterval}
+                    >
+                        2010/09 ~ 2014/07
+                    </Typography>
+                </TimelineOppositeContent>
+
                 <TimelineSeparator>
                     <TimelineDot color="secondary">
                         <RepeatIcon />
                     </TimelineDot>
                 </TimelineSeparator>
                 <TimelineContent>
+                    {!over_sm && (
+                        <Typography variant="body2" color="initial">
+                            2010/09 ~ 2014/07
+                        </Typography>
+                    )}
                     <Paper elevation={3} className={classes.paper}>
                         <Typography variant="h6" component="h1">
-                            Repeat
+                            中山大學 應用數學系 學士
                         </Typography>
                         <Typography>
-                            Because this is the life you love!
+                            文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述
                         </Typography>
                     </Paper>
                 </TimelineContent>
@@ -106,3 +176,5 @@ export default function CustomizedTimeline() {
         </Timeline>
     );
 }
+
+export default withWidth()(CustomizedTimeline);
