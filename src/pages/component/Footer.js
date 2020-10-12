@@ -5,6 +5,7 @@ import Popover from "@material-ui/core/Popover";
 import Tooltip from "@material-ui/core/Tooltip";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
+import EmailIcon from "@material-ui/icons/Email";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import SmsIcon from "@material-ui/icons/Sms";
 import MessageCard from "./MessageCard/MessageMeCard";
@@ -98,6 +99,7 @@ export default function Footer() {
             <CopyRight>© 2020 Josh Chang. All rights reserved.</CopyRight>
 
             <IconGroup>
+                <EmailIcon className="IconItem" />
                 <FacebookIcon
                     className="IconItem"
                     onClick={() =>

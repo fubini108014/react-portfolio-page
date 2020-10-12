@@ -62,6 +62,9 @@ export const ServiceContainer = styled.div`
     & .grid-item4 {
         height: 240px;
     }
+    & .textContent {
+        margin: 5px;
+    }
     @media screen and (max-width: 450px) {
         & .grid-item1,
         & .grid-item2,

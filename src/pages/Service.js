@@ -12,10 +12,23 @@ function Service() {
         columnWidth: 160,
         gutter: 10,
     };
+
+    const serviceContentLists = [
+        "串接第三方 API 經驗 Google、Facebook、Youtbue",
+        "React、Flux 開發經驗",
+        "Git、GitHub、GitLab",
+        "熟悉框架應用 Ant Design、Vant、Bootstrap",
+        "熟悉網頁切阪、瀏覽器相容性、RWD",
+        "APP 雙平台 - React Native 開發 Android、IOS APP",
+        6,
+        7,
+        8,
+    ];
+
     return (
         <ServiceContainer>
             <Masonry className="masonryIn" options={masonryOptions}>
-                {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((el, idx) => (
+                {serviceContentLists.map((el, idx) => (
                     <motion.div
                         className={clsx("masonryItem", {
                             "grid-item1": idx === 2 || idx === 8,
@@ -27,7 +40,7 @@ function Service() {
                         animate={animate}
                         transition={{ ...transition, delay: idx * 0.3 + 0.1 }}
                     >
-                        Service {el}
+                        <div className="textContent">{el}</div>
                     </motion.div>
                 ))}
             </Masonry>
