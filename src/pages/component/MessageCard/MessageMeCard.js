@@ -17,7 +17,6 @@ import ChatIcon from "@material-ui/icons/Chat";
 import CloseIcon from "@material-ui/icons/Close";
 import { motion } from "framer-motion";
 const animate = { x: [-10, -4, 0, 2], opacity: [0, 0.4, 0.7, 1] };
-const animate1 = { y: [20, 12, 5, 0], opacity: [0, 0.4, 0.7, 1] };
 const animate2 = { opacity: [0, 0.4, 0.7, 1] };
 const transition = { times: [0, 0.4, 0.7, 1] };
 

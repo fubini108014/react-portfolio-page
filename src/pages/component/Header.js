@@ -6,6 +6,7 @@ import { Navigation } from "./sideMenu/Navigation";
 import Avatar from "@material-ui/core/Avatar";
 import headshot from "../../assets/img/chinphoto.jpg";
 import { Link } from "react-router-dom";
+
 import {
     HeaderWrapper,
     AccountBox,
@@ -88,11 +89,24 @@ function Header() {
                     </motion.nav>
                 </MotionMenu>
             </AccountBox>
-            <Others>
-                <Link to={"/"}>
-                    <HomeIcon className="homeIcon" />
-                </Link>
-            </Others>
+            <motion.div
+                whileHover={{
+                    y: [2, -2, -7, -2, 2],
+                }}
+                transition={{
+                    duration: 2,
+                    ease: "linear",
+                    times: [0, 0.2, 0.5, 0.8, 1],
+                    loop: Infinity,
+                    repeatDelay: 0.5,
+                }}
+            >
+                <Others>
+                    <Link to={"/"}>
+                        <HomeIcon className="homeIcon" />
+                    </Link>
+                </Others>
+            </motion.div>
         </HeaderWrapper>
     );
 }

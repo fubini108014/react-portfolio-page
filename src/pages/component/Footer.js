@@ -13,6 +13,7 @@ import Dialog from "@material-ui/core/Dialog";
 import DialogContent from "@material-ui/core/DialogContent";
 import useRWD from "../customhooks/useRWD";
 import QRCodeImg from "../../assets/img/QRcode.png";
+import { motion } from "framer-motion";
 const FooterWapper = styled.div`
     background-color: rgba(0, 0, 0, 0.3);
     border: 1px solid #000;
@@ -50,6 +51,7 @@ const IconGroup = styled.div`
     font-size: 1rem;
     justify-content: center;
     align-items: center;
+    display: inline-flex;
     & .IconItem {
         margin: 5px;
         cursor: pointer;
@@ -94,28 +96,38 @@ export default function Footer() {
     const handleClose = () => {
         setAnchorEl(null);
     };
+
+    const iconLists = [
+        <EmailIcon className="IconItem" />,
+        <FacebookIcon
+            className="IconItem"
+            onClick={() =>
+                window.open(
+                    "https://www.facebook.com/profile.php?id=100000191509477"
+                )
+            }
+        />,
+        <InstagramIcon
+            className="IconItem"
+            onClick={() => window.open("https://www.instagram.com/ga576895/")}
+        />,
+        <GitHubIcon className="IconItem" />,
+        <QRcodeIcon className="IconItem" />,
+    ];
+
     return (
         <FooterWapper>
             <CopyRight>© 2020 Josh Chang. All rights reserved.</CopyRight>
 
             <IconGroup>
-                <EmailIcon className="IconItem" />
-                <FacebookIcon
-                    className="IconItem"
-                    onClick={() =>
-                        window.open(
-                            "https://www.facebook.com/profile.php?id=100000191509477"
-                        )
-                    }
-                />
-                <InstagramIcon
-                    className="IconItem"
-                    onClick={() =>
-                        window.open("https://www.instagram.com/ga576895/")
-                    }
-                />
-                <GitHubIcon className="IconItem" />
-                <QRcodeIcon className="IconItem" />
+                {iconLists.map((item) => (
+                    <motion.div
+                        whileHover={{ scale: 1.2 }}
+                        whileTap={{ scale: 0.9 }}
+                    >
+                        {item}
+                    </motion.div>
+                ))}
             </IconGroup>
 
             <MessageMe>
