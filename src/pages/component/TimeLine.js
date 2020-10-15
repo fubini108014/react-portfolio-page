@@ -7,12 +7,12 @@ import TimelineConnector from "@material-ui/lab/TimelineConnector";
 import TimelineContent from "@material-ui/lab/TimelineContent";
 import TimelineOppositeContent from "@material-ui/lab/TimelineOppositeContent";
 import TimelineDot from "@material-ui/lab/TimelineDot";
-import LaptopMacIcon from "@material-ui/icons/LaptopMac";
-import HotelIcon from "@material-ui/icons/Hotel";
-import RepeatIcon from "@material-ui/icons/Repeat";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import NccuSVG from "../../assets/img/NCCU.svg";
+import NsysuSVG from "../../assets/img/nsysu.png";
+import GshankPNG from "../../assets/img/Gshank.png";
+import XQPNG from "../../assets/img/XQ-Logo.png";
 import withWidth, { isWidthUp } from "@material-ui/core/withWidth";
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -31,11 +31,50 @@ const useStyles = makeStyles((theme) => ({
         margin: "5px 0",
     },
     NccuIcon: {
-        height: "24px",
-        width: "24px",
+        height: "26px",
+        width: "26px",
         display: "inline-flex",
         backgroundSize: "cover",
+        backgroundPosition: "center",
         backgroundImage: `url(${NccuSVG})`,
+    },
+    NccuDot: { color: "#fff", borderColor: "transparent", borderWidth: "0px" },
+    NsysuIcon: {
+        height: "26px",
+        width: "26px",
+        display: "inline-flex",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundImage: `url(${NsysuSVG})`,
+    },
+    NsysuDot: {
+        color: "#fff",
+        borderColor: "transparent",
+        background: "linear-gradient(to right, #ffefba, #ffffff)",
+        borderWidth: "0px",
+    },
+    GshankIcon: {
+        height: "26px",
+        width: "26px",
+        display: "inline-flex",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "108% 100%",
+        backgroundPosition: "center",
+        backgroundImage: `url(${GshankPNG})`,
+    },
+    GshankDot: {
+        color: "#fff",
+        borderColor: "transparent",
+        borderWidth: "0px",
+    },
+    XQIcon: {
+        height: "26px",
+        width: "26px",
+        display: "inline-flex",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundImage: `url(${XQPNG})`,
+        borderWidth: "0px",
     },
 }));
 
@@ -58,9 +97,8 @@ function CustomizedTimeline(props) {
                 </TimelineOppositeContent>
 
                 <TimelineSeparator>
-                    <TimelineDot>
-                        <div className={classes.NccuIcon} />
-                    </TimelineDot>
+                    <TimelineDot className={classes.XQIcon} />
+
                     <TimelineConnector />
                 </TimelineSeparator>
                 <TimelineContent>
@@ -100,8 +138,8 @@ function CustomizedTimeline(props) {
                 </TimelineOppositeContent>
 
                 <TimelineSeparator>
-                    <TimelineDot color="primary">
-                        <LaptopMacIcon />
+                    <TimelineDot className={classes.GshankDot}>
+                        <div className={classes.GshankIcon} />
                     </TimelineDot>
                     <TimelineConnector />
                 </TimelineSeparator>
@@ -142,8 +180,8 @@ function CustomizedTimeline(props) {
                 </TimelineOppositeContent>
 
                 <TimelineSeparator>
-                    <TimelineDot color="primary" variant="outlined">
-                        <HotelIcon />
+                    <TimelineDot className={classes.NccuDot}>
+                        <div className={classes.NccuIcon} />
                     </TimelineDot>
                     <TimelineConnector className={classes.secondaryTail} />
                 </TimelineSeparator>
@@ -185,8 +223,8 @@ function CustomizedTimeline(props) {
                 </TimelineOppositeContent>
 
                 <TimelineSeparator>
-                    <TimelineDot color="secondary">
-                        <RepeatIcon />
+                    <TimelineDot className={classes.NsysuDot}>
+                        <div className={classes.NsysuIcon} />
                     </TimelineDot>
                 </TimelineSeparator>
                 <TimelineContent>
