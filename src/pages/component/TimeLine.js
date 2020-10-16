@@ -38,7 +38,12 @@ const useStyles = makeStyles((theme) => ({
         backgroundPosition: "center",
         backgroundImage: `url(${NccuSVG})`,
     },
-    NccuDot: { color: "#fff", borderColor: "transparent", borderWidth: "0px" },
+    NccuDot: {
+        color: "#fff",
+        borderColor: "transparent",
+        borderWidth: "0px",
+        background: "linear-gradient(to right, #83a4d4, #b6fbff)",
+    },
     NsysuIcon: {
         height: "26px",
         width: "26px",
@@ -66,6 +71,7 @@ const useStyles = makeStyles((theme) => ({
         color: "#fff",
         borderColor: "transparent",
         borderWidth: "0px",
+        background: "linear-gradient(to right, #8697ea, #c5d9f5)",
     },
     XQIcon: {
         height: "26px",

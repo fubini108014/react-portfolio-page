@@ -25,31 +25,38 @@ const MyDesc = styled.div`
 `;
 
 const chipLanguagesLists = [
-    { icon: <FaceIcon />, label: "Python", color: "#FF008C" },
-    { icon: <FaceIcon />, label: "Javascript", color: "#FF008C" },
     { icon: <DoneIcon />, label: "HTML", color: "#FF008C" },
     { icon: <FaceIcon />, label: "CSS", color: "#FF008C" },
-    { icon: <DoneIcon />, label: "Less", color: "#FF008C" },
+    { icon: <FaceIcon />, label: "Javascript", color: "#FF008C" },
+    { icon: <FaceIcon />, label: "Typescript", color: "#FF008C" },
+    { icon: <FaceIcon />, label: "Python", color: "#FF008C" },
+    { icon: <FaceIcon />, label: "flutter", color: "#FF008C" },
+    { icon: <DoneIcon />, label: "C#", color: "#FF008C" },
 ];
 const chipFrameworksLists = [
-    { icon: <FaceIcon />, label: "Redux", color: "#D309E1" },
-    { icon: <FaceIcon />, label: "Unity", color: "#D309E1" },
-    { icon: <DoneIcon />, label: "React Native", color: "#D309E1" },
-    { icon: <FaceIcon />, label: "Express.js", color: "#D309E1" },
-    { icon: <DoneIcon />, label: "ASP.NET MVC", color: "#D309E1" },
+    { icon: <FaceIcon />, label: "jQuery", color: "#D309E1" },
+    { icon: <FaceIcon />, label: "Bootstrap", color: "#D309E1" },
+    { icon: <FaceIcon />, label: "DataTables", color: "#D309E1" },
+    { icon: <DoneIcon />, label: "D3.js", color: "#D309E1" },
+    { icon: <DoneIcon />, label: "Three.js", color: "#D309E1" },
+    { icon: <FaceIcon />, label: "Material-UI", color: "#D309E1" },
+    { icon: <FaceIcon />, label: "Ant Design ", color: "#D309E1" },
+    { icon: <DoneIcon />, label: "styled-components", color: "#D309E1" },
 ];
 const chipLibrariesLists = [
-    { icon: <FaceIcon />, label: "TensorFlow", color: "#9C1AFF" },
-    { icon: <FaceIcon />, label: "React", color: "#9C1AFF" },
+    { icon: <FaceIcon />, label: "React Hook", color: "#9C1AFF" },
     { icon: <DoneIcon />, label: "React Redux", color: "#9C1AFF" },
     { icon: <FaceIcon />, label: "React Router", color: "#9C1AFF" },
-    { icon: <DoneIcon />, label: "jQuery", color: "#9C1AFF" },
-    { icon: <DoneIcon />, label: "D3.js", color: "#9C1AFF" },
+    { icon: <FaceIcon />, label: "React Native", color: "#9C1AFF" },
+    { icon: <DoneIcon />, label: "Google API、Maps", color: "#9C1AFF" },
+    { icon: <DoneIcon />, label: "Facebook API", color: "#9C1AFF" },
 ];
 const chipOthersLists = [
+    { icon: <FaceIcon />, label: "tensorflow", color: "#7700FF" },
+    { icon: <FaceIcon />, label: "keras", color: "#7700FF" },
     { icon: <FaceIcon />, label: "Machine Learning", color: "#7700FF" },
     { icon: <FaceIcon />, label: "Unity or Unity3D", color: "#7700FF" },
-    { icon: <DoneIcon />, label: "Software Developer", color: "#7700FF" },
+    { icon: <DoneIcon />, label: "fast api", color: "#7700FF" },
 ];
 
 const chipStorageLists = [
