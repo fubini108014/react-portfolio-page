@@ -9,7 +9,7 @@ function Home() {
     return (
         <HomeContainer>
             <h1>Hi I'm Josh Chang.</h1>
-            <h1>A Front End Developer.</h1>
+            <h2>A Front End Developer.</h2>
         </HomeContainer>
     );
 }

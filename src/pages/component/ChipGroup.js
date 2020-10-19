@@ -28,6 +28,7 @@ export default function ChipGroup({ chipLists }) {
         <div className={classes.root}>
             {chipLists.map((item) => (
                 <Chip
+                    key={item.label}
                     icon={item.icon}
                     label={item.label}
                     className="chipStyle"

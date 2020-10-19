@@ -6,7 +6,7 @@ import { Navigation } from "./sideMenu/Navigation";
 import Avatar from "@material-ui/core/Avatar";
 import headshot from "../../assets/img/chinphoto.jpg";
 import { Link } from "react-router-dom";
-
+import Tooltip from "@material-ui/core/Tooltip";
 import {
     HeaderWrapper,
     AccountBox,
@@ -102,9 +102,11 @@ function Header() {
                 }}
             >
                 <Others>
-                    <Link to={"/"}>
-                        <HomeIcon className="homeIcon" />
-                    </Link>
+                    <Tooltip title="Home" placement="left-end" arrow>
+                        <Link to={"/"}>
+                            <HomeIcon className="homeIcon" />
+                        </Link>
+                    </Tooltip>
                 </Others>
             </motion.div>
         </HeaderWrapper>

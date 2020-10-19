@@ -33,7 +33,7 @@ const chipLanguagesLists = [
     { icon: <FaceIcon />, label: "flutter", color: "#FF008C" },
     { icon: <DoneIcon />, label: "C#", color: "#FF008C" },
 ];
-const chipFrameworksLists = [
+const chipUILibrariesLists = [
     { icon: <FaceIcon />, label: "jQuery", color: "#D309E1" },
     { icon: <FaceIcon />, label: "Bootstrap", color: "#D309E1" },
     { icon: <FaceIcon />, label: "DataTables", color: "#D309E1" },
@@ -78,15 +78,15 @@ function About() {
             <TimeLine />
             <h1>技能</h1>
             Languages:
-            <ChipGroup chipLists={chipLanguagesLists} />
-            Frameworks:
-            <ChipGroup chipLists={chipFrameworksLists} />
+            <ChipGroup key={"Languages"} chipLists={chipLanguagesLists} />
+            UILibraries:
+            <ChipGroup key={"UILibraries"} chipLists={chipUILibrariesLists} />
             Libraries/APIs:
-            <ChipGroup chipLists={chipLibrariesLists} />
+            <ChipGroup key={"Libraries"} chipLists={chipLibrariesLists} />
             Others:
-            <ChipGroup chipLists={chipOthersLists} />
+            <ChipGroup key={"Others"} chipLists={chipOthersLists} />
             Storage:
-            <ChipGroup chipLists={chipStorageLists} />
+            <ChipGroup key={"Storage"} chipLists={chipStorageLists} />
             <h1>興趣</h1>
         </AboutContainer>
     );

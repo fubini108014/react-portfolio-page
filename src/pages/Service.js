@@ -14,15 +14,17 @@ function Service() {
     };
 
     const serviceContentLists = [
-        "串接第三方 API 經驗 Google、Facebook、Youtbue",
-        "React、Flux 開發經驗",
-        "Git、GitHub、GitLab",
-        "熟悉框架應用 Ant Design、Vant、Bootstrap",
-        "熟悉網頁切阪、瀏覽器相容性、RWD",
-        "APP 雙平台 - React Native 開發 Android、IOS APP",
-        6,
-        7,
-        8,
+        "使用版本控制工具Git、GitHub、GitLab經驗",
+        "React js、Redux、 ES6/7、Typescript 開發經驗",
+        "串接第三方 API 經驗 Google、Facebook、Youtbue、Instagram",
+        "熟悉RWD響應式網頁切版設計製作/美工繪圖軟體(PS、Ai...等)",
+        "熟悉UI Library應用 Bootstrap、styled-component、Material UI、Ant Design、Framer Motion、D3.js",
+        "React Native、Fluttter 雙平台開發 Android、IOS APP",
+        "瀏覽器相容性、PWA實作經驗",
+        "熟悉 Jenkins 或其他 CI 相關工具",
+        "使用Python fastapi建構Web API服務",
+        "機器學習、神經網路",
+        "熟悉 Microsoft SQL Server  及 MongoDB 資料庫",
     ];
 
     return (

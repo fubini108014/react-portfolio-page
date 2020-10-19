@@ -7,6 +7,7 @@ import About from "./pages/About";
 import Service from "./pages/Service";
 import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/Contact";
+import Blog from "./pages/Blog";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 function App() {
     return (
@@ -31,6 +32,9 @@ function App() {
                             <li>
                                 <Link to="/contact">contact</Link>
                             </li>
+                            <li>
+                                <Link to="/blog">Blog</Link>
+                            </li>
                         </ul>
                     </LeftSide>
                     <RightSide>
@@ -49,6 +53,7 @@ function App() {
                                 path="/contact"
                                 component={() => <Contact />}
                             />
+                            <Route path="/blog" component={() => <Blog />} />
                             <Route
                                 component={() => <div>404 Not found </div>}
                             />

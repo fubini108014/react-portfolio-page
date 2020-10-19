@@ -34,7 +34,7 @@ const FooterWapper = styled.div`
 
 const CopyRight = styled.div`
     color: #fff;
-    flex: 0 0 300px;
+    flex: 1 0 30%;
     margin: 5px;
     font-size: 0.5rem;
     justify-content: center;
@@ -46,23 +46,25 @@ const CopyRight = styled.div`
 
 const IconGroup = styled.div`
     color: #fff;
-    flex: 0 0 200px;
+    flex: 1 0 30%;
     margin: 0 7px;
     font-size: 1rem;
     justify-content: center;
     align-items: center;
     display: inline-flex;
     & .IconItem {
-        margin: 5px;
+        margin: 5px 10px;
         cursor: pointer;
     }
 `;
 
 const MessageMe = styled.div`
     color: #fff;
+    flex: 1 0 30%;
     margin: 0 10px;
     font-size: 1rem;
-    justify-content: center;
+    display: flex;
+    justify-content: flex-end;
     align-items: center;
     & .SmsIconFab {
         width: 48px;
@@ -98,21 +100,33 @@ export default function Footer() {
     };
 
     const iconLists = [
-        <EmailIcon className="IconItem" />,
-        <FacebookIcon
-            className="IconItem"
-            onClick={() =>
-                window.open(
-                    "https://www.facebook.com/profile.php?id=100000191509477"
-                )
-            }
-        />,
-        <InstagramIcon
-            className="IconItem"
-            onClick={() => window.open("https://www.instagram.com/ga576895/")}
-        />,
-        <GitHubIcon className="IconItem" />,
-        <QRcodeIcon className="IconItem" />,
+        { title: "Email", component: <EmailIcon className="IconItem" /> },
+        {
+            title: "Facebook",
+            component: (
+                <FacebookIcon
+                    className="IconItem"
+                    onClick={() =>
+                        window.open(
+                            "https://www.facebook.com/profile.php?id=100000191509477"
+                        )
+                    }
+                />
+            ),
+        },
+        {
+            title: "Instagram",
+            component: (
+                <InstagramIcon
+                    className="IconItem"
+                    onClick={() =>
+                        window.open("https://www.instagram.com/ga576895/")
+                    }
+                />
+            ),
+        },
+        { title: "GitHub", component: <GitHubIcon className="IconItem" /> },
+        { title: "QRcode", component: <QRcodeIcon className="IconItem" /> },
     ];
 
     return (
@@ -120,13 +134,16 @@ export default function Footer() {
             <CopyRight>© 2020 Josh Chang. All rights reserved.</CopyRight>
 
             <IconGroup>
-                {iconLists.map((item) => (
-                    <motion.div
-                        whileHover={{ scale: 1.2 }}
-                        whileTap={{ scale: 0.9 }}
-                    >
-                        {item}
-                    </motion.div>
+                {iconLists.map((item, i) => (
+                    <Tooltip title={item.title} placement="top" arrow>
+                        <motion.div
+                            key={i}
+                            whileHover={{ scale: 1.2 }}
+                            whileTap={{ scale: 0.9 }}
+                        >
+                            {item.component}
+                        </motion.div>
+                    </Tooltip>
                 ))}
             </IconGroup>
 
