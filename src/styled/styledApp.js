@@ -25,20 +25,9 @@ export const LeftSide = styled.div`
     color: #fff;
     width: 20%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
-    & ul {
-        padding: 0;
-    }
-    & li {
-        list-style-type: none;
-        margin: 5px;
-    }
-
-    & a {
-        color: #fff;
-    }
 
     @media screen and (max-width: 760px) {
         display: none;

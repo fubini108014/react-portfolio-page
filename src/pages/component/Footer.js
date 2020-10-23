@@ -3,17 +3,15 @@ import styled from "styled-components";
 import Fab from "@material-ui/core/Fab";
 import Popover from "@material-ui/core/Popover";
 import Tooltip from "@material-ui/core/Tooltip";
-import FacebookIcon from "@material-ui/icons/Facebook";
-import InstagramIcon from "@material-ui/icons/Instagram";
-import EmailIcon from "@material-ui/icons/Email";
-import GitHubIcon from "@material-ui/icons/GitHub";
 import SmsIcon from "@material-ui/icons/Sms";
 import MessageCard from "./MessageCard/MessageMeCard";
 import Dialog from "@material-ui/core/Dialog";
 import DialogContent from "@material-ui/core/DialogContent";
 import useRWD from "../customhooks/useRWD";
-import QRCodeImg from "../../assets/img/QRcode.png";
-import { motion } from "framer-motion";
+
+import ReactJkMusicPlayer from "react-jinke-music-player";
+import "react-jinke-music-player/assets/index.css";
+
 const FooterWapper = styled.div`
     background-color: rgba(0, 0, 0, 0.3);
     border: 1px solid #000;
@@ -43,21 +41,13 @@ const CopyRight = styled.div`
         display: none;
     }
 `;
-
-const IconGroup = styled.div`
+const AudioContainer = styled.div`
     color: #fff;
     flex: 1 0 30%;
-    margin: 0 7px;
-    font-size: 1rem;
     justify-content: center;
     align-items: center;
-    display: inline-flex;
-    & .IconItem {
-        margin: 5px 10px;
-        cursor: pointer;
-    }
+    display: flex;
 `;
-
 const MessageMe = styled.div`
     color: #fff;
     flex: 1 0 30%;
@@ -80,13 +70,24 @@ const MessageMe = styled.div`
     }
 `;
 
-const QRcodeIcon = styled.div`
-    height: 24px;
-    width: 24px;
-    display: inline-flex;
-    background-size: cover;
-    background-image: url(${QRCodeImg});
-`;
+const audioList1 = [
+    {
+        name: "Despacito",
+        singer: "Luis Fonsi",
+        cover:
+            "http://res.cloudinary.com/alick/image/upload/v1502689731/Despacito_uvolhp.jpg",
+        musicSrc:
+            "http://res.cloudinary.com/alick/video/upload/v1502689683/Luis_Fonsi_-_Despacito_ft._Daddy_Yankee_uyvqw9.mp3",
+    },
+    {
+        name: "Dorost Nemisham",
+        singer: "Sirvan Khosravi",
+        cover:
+            "https://res.cloudinary.com/ehsanahmadi/image/upload/v1573758778/Sirvan-Khosravi-Dorost-Nemisham_glicks.jpg",
+        musicSrc:
+            "https://res.cloudinary.com/ehsanahmadi/video/upload/v1573550770/Sirvan-Khosravi-Dorost-Nemisham-128_kb8urq.mp3",
+    },
+];
 export default function Footer() {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const device = useRWD();
@@ -99,54 +100,24 @@ export default function Footer() {
         setAnchorEl(null);
     };
 
-    const iconLists = [
-        { title: "Email", component: <EmailIcon className="IconItem" /> },
-        {
-            title: "Facebook",
-            component: (
-                <FacebookIcon
-                    className="IconItem"
-                    onClick={() =>
-                        window.open(
-                            "https://www.facebook.com/profile.php?id=100000191509477"
-                        )
-                    }
-                />
-            ),
-        },
-        {
-            title: "Instagram",
-            component: (
-                <InstagramIcon
-                    className="IconItem"
-                    onClick={() =>
-                        window.open("https://www.instagram.com/ga576895/")
-                    }
-                />
-            ),
-        },
-        { title: "GitHub", component: <GitHubIcon className="IconItem" /> },
-        { title: "QRcode", component: <QRcodeIcon className="IconItem" /> },
-    ];
-
     return (
         <FooterWapper>
-            <CopyRight>© 2020 Josh Chang. All rights reserved.</CopyRight>
-
-            <IconGroup>
-                {iconLists.map((item, i) => (
-                    <Tooltip title={item.title} placement="top" arrow>
-                        <motion.div
-                            key={i}
-                            whileHover={{ scale: 1.2 }}
-                            whileTap={{ scale: 0.9 }}
-                        >
-                            {item.component}
-                        </motion.div>
-                    </Tooltip>
-                ))}
-            </IconGroup>
-
+            <CopyRight>Copyright © 2020 Josh Chang.</CopyRight>
+            <AudioContainer>
+                <ReactJkMusicPlayer
+                    className="musicPlayer"
+                    mode="full"
+                    showDownload={false}
+                    showThemeSwitch={false}
+                    showLyric={false}
+                    showPlayMode={false}
+                    showDestroy={false}
+                    toggleMode={false}
+                    responsive={false}
+                    showReload={false}
+                    audioLists={audioList1}
+                />
+            </AudioContainer>
             <MessageMe>
                 <Tooltip title="Message me" placement="left-start" arrow>
                     <Fab

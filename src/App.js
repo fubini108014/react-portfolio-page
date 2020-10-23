@@ -2,40 +2,35 @@ import React from "react";
 import { Layout, LeftSide, Content, RightSide } from "./styled/styledApp";
 import Footer from "./pages/component/Footer";
 import Header from "./pages/component/Header";
+import LeftSideMenu from "./pages/component/LeftSideMenu";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Service from "./pages/Service";
 import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 function App() {
+    const move = ({ keyCode }) => {
+        console.log(keyCode);
+        //38 up 40 down
+        if (keyCode === 38) {
+        } else if (keyCode === 40) {
+        }
+    };
+
     return (
         <Router basename={process.env.PUBLIC_URL}>
-            <Layout>
+            <Layout
+                role="button"
+                tabIndex="0"
+                onKeyDown={(e) => move(e)}
+                //onKeyUp={(e) => console.log(e)}
+            >
                 <Header />
                 <Content>
                     <LeftSide>
-                        <ul>
-                            <li>
-                                <Link to="/">Home</Link>
-                            </li>
-                            <li>
-                                <Link to="/about">About</Link>
-                            </li>
-                            <li>
-                                <Link to="/service">Service</Link>
-                            </li>
-                            <li>
-                                <Link to="/portfolio">portfolio</Link>
-                            </li>
-                            <li>
-                                <Link to="/contact">contact</Link>
-                            </li>
-                            <li>
-                                <Link to="/blog">Blog</Link>
-                            </li>
-                        </ul>
+                        <LeftSideMenu />
                     </LeftSide>
                     <RightSide>
                         <Switch>
