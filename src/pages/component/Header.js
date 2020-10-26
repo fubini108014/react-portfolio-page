@@ -33,6 +33,9 @@ const IconGroup = styled.div`
         margin: 5px 10px;
         cursor: pointer;
     }
+    @media screen and (max-width: 760px) {
+        display: none;
+    }
 `;
 const QRcodeIcon = styled.div`
     height: 24px;
@@ -113,7 +116,10 @@ function Header() {
             ),
         },
         { title: "GitHub", component: <GitHubIcon className="IconItem" /> },
-        { title: "QRcode", component: <QRcodeIcon className="IconItem" /> },
+        {
+            title: "QRcode",
+            component: <QRcodeIcon className="IconItem QRCode" />,
+        },
     ];
 
     return (

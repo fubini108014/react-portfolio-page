@@ -8,7 +8,7 @@ import MessageCard from "./MessageCard/MessageMeCard";
 import Dialog from "@material-ui/core/Dialog";
 import DialogContent from "@material-ui/core/DialogContent";
 import useRWD from "../customhooks/useRWD";
-
+import SpeedDail from "../component/SpeedDial";
 import ReactJkMusicPlayer from "react-jinke-music-player";
 import "react-jinke-music-player/assets/index.css";
 
@@ -102,6 +102,7 @@ export default function Footer() {
 
     return (
         <FooterWapper>
+            <SpeedDail />
             <CopyRight>Copyright © 2020 Josh Chang.</CopyRight>
             <AudioContainer>
                 <ReactJkMusicPlayer
@@ -115,6 +116,7 @@ export default function Footer() {
                     toggleMode={false}
                     responsive={false}
                     showReload={false}
+                    autoPlay={false}
                     audioLists={audioList1}
                 />
             </AudioContainer>
