@@ -69,12 +69,13 @@ export const ProCardContainer = styled.div`
         position: absolute;
         top: 50%;
         left: 50%;
+        opacity: 0;
         transform: translate(-50%, -50%);
-        display: none;
+        transition: opacity calc(700ms * 2) cubic-bezier(0.19, 1, 0.22, 1);
     }
 
     &:hover .showModalBtn {
-        display: inline-block;
+        opacity: 1;
     }
 `;
 export const Description = styled.div`

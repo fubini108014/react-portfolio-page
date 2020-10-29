@@ -12,22 +12,6 @@ code {
         monospace;
 }
 
-.musicPlayer .music-player-panel {
-    box-shadow: none !important;
-    height: 50px !important;
-    bottom: 10px !important;
-    background-color: transparent !important;
-    width: 58% !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    z-index: 5 !important;
-}
-
-.musicPlayer .music-player-panel .img-content {
-    width: 48px !important;
-    height: 48px !important;
-}
-
 @media screen and (max-width: 760px) {
     .musicPlayer .music-player-panel {
         bottom: 2px !important;

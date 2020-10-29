@@ -4,7 +4,7 @@ import ChipGroup from "./component/ChipGroup";
 import styled from "styled-components";
 import FaceIcon from "@material-ui/icons/Face";
 import DoneIcon from "@material-ui/icons/Done";
-
+import Slide from "@material-ui/core/Slide";
 const AboutContainer = styled.div`
     color: #fff;
 `;
@@ -67,28 +67,33 @@ const chipStorageLists = [
 
 function About() {
     return (
-        <AboutContainer>
-            <h1>關於</h1>
-            <MyPic>image</MyPic>
-            <MyName>張 群 | Josh Chang</MyName>
-            <MyDesc>
-                文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述。
-            </MyDesc>
-            <h1>經歷</h1>
-            <TimeLine />
-            <h1>技能</h1>
-            Languages:
-            <ChipGroup key={"Languages"} chipLists={chipLanguagesLists} />
-            UILibraries:
-            <ChipGroup key={"UILibraries"} chipLists={chipUILibrariesLists} />
-            Libraries/APIs:
-            <ChipGroup key={"Libraries"} chipLists={chipLibrariesLists} />
-            Others:
-            <ChipGroup key={"Others"} chipLists={chipOthersLists} />
-            Storage:
-            <ChipGroup key={"Storage"} chipLists={chipStorageLists} />
-            <h1>興趣</h1>
-        </AboutContainer>
+        <Slide direction="left" in={true} mountOnEnter unmountOnExit>
+            <AboutContainer>
+                <h1>關於</h1>
+                <MyPic>image</MyPic>
+                <MyName>張 群 | Josh Chang</MyName>
+                <MyDesc>
+                    文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述。
+                </MyDesc>
+                <h1>經歷</h1>
+                <TimeLine />
+                <h1>技能</h1>
+                Languages:
+                <ChipGroup key={"Languages"} chipLists={chipLanguagesLists} />
+                UILibraries:
+                <ChipGroup
+                    key={"UILibraries"}
+                    chipLists={chipUILibrariesLists}
+                />
+                Libraries/APIs:
+                <ChipGroup key={"Libraries"} chipLists={chipLibrariesLists} />
+                Others:
+                <ChipGroup key={"Others"} chipLists={chipOthersLists} />
+                Storage:
+                <ChipGroup key={"Storage"} chipLists={chipStorageLists} />
+                <h1>興趣</h1>
+            </AboutContainer>
+        </Slide>
     );
 }
 

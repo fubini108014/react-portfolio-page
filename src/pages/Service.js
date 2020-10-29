@@ -2,6 +2,7 @@ import React from "react";
 import { ServiceContainer } from "../styled/styledService";
 import Masonry from "react-masonry-component";
 import { motion } from "framer-motion";
+import Fade from "@material-ui/core/Fade";
 import clsx from "clsx";
 const animate = { y: [20, 13, 7, 0], opacity: [0, 0.4, 0.7, 1] };
 const transition = { times: [0, 0.4, 0.7, 1] };
@@ -28,25 +29,30 @@ function Service() {
     ];
 
     return (
-        <ServiceContainer>
-            <Masonry className="masonryIn" options={masonryOptions}>
-                {serviceContentLists.map((el, idx) => (
-                    <motion.div
-                        className={clsx("masonryItem", {
-                            "grid-item1": idx === 2 || idx === 8,
-                            "grid-item2": idx === 0 || idx === 5,
-                            "grid-item3": idx === 4,
-                            "grid-item4": idx === 3,
-                        })}
-                        key={idx}
-                        animate={animate}
-                        transition={{ ...transition, delay: idx * 0.3 + 0.1 }}
-                    >
-                        <div className="textContent">{el}</div>
-                    </motion.div>
-                ))}
-            </Masonry>
-        </ServiceContainer>
+        <Fade in={true}>
+            <ServiceContainer>
+                <Masonry className="masonryIn" options={masonryOptions}>
+                    {serviceContentLists.map((el, idx) => (
+                        <motion.div
+                            className={clsx("masonryItem", {
+                                "grid-item1": idx === 2 || idx === 8,
+                                "grid-item2": idx === 0 || idx === 5,
+                                "grid-item3": idx === 4,
+                                "grid-item4": idx === 3,
+                            })}
+                            key={idx}
+                            animate={animate}
+                            transition={{
+                                ...transition,
+                                delay: idx * 0.3 + 0.1,
+                            }}
+                        >
+                            <div className="textContent">{el}</div>
+                        </motion.div>
+                    ))}
+                </Masonry>
+            </ServiceContainer>
+        </Fade>
     );
 }
 
