@@ -4,7 +4,11 @@ import Divider from "@material-ui/core/Divider";
 import SearchIcon from "@material-ui/icons/Search";
 import IconButton from "@material-ui/core/IconButton";
 import { makeStyles } from "@material-ui/core/styles";
-import BlogLists from "./component/BlogLists";
+import BlogLists from "./component/Blog/BlogLists";
+import BlogPages from "./component/Blog/BlogPages";
+import Pagination from "@material-ui/lab/Pagination";
+import PaginationItem from "@material-ui/lab/PaginationItem";
+import { Link, useParams } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
     blogContainer: {},
     blogTitle: {
@@ -22,10 +26,23 @@ const useStyles = makeStyles((theme) => ({
         margin: "5px 0",
     },
     searchBox: {},
+    pagination: {
+        "& .Mui-selected": {
+            backgroundColor: "rgb(255 255 255 / 30%)",
+        },
+        "& .MuiPaginationItem-ellipsis": {
+            color: "#FFF",
+        },
+    },
+
+    paginationItem: {
+        color: "#FFF",
+    },
     iconButton: { padding: 10, color: "#FFF" },
 }));
 function Blog() {
     const classes = useStyles();
+    let { pages = 0 } = useParams();
     return (
         <>
             <Slide direction="left" in={true} mountOnEnter unmountOnExit>
@@ -43,11 +60,28 @@ function Blog() {
                             <SearchIcon />
                         </IconButton>
                     </div>
+                    <Pagination
+                        page={parseInt(pages)}
+                        className={classes.pagination}
+                        count={10}
+                        renderItem={(item) => (
+                            <PaginationItem
+                                className={classes.paginationItem}
+                                component={Link}
+                                to={
+                                    pages === 0
+                                        ? `blog/${item.page}`
+                                        : `${item.page}`
+                                }
+                                {...item}
+                            />
+                        )}
+                    />
                     <Divider
                         className={classes.customDivider}
                         variant="fullWidth"
                     />
-                    <BlogLists />
+                    {pages === 0 ? <BlogLists /> : <BlogPages pages={pages} />}
                 </div>
             </Slide>
         </>

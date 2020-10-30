@@ -43,11 +43,21 @@ const PathMap2 = {
     "/contact": 4,
     "/blog": 5,
 };
+
+function getMenuIdx(path) {
+    if (path.indexOf("blog") > -1) {
+        return 5;
+    } else {
+        return PathMap2[path];
+    }
+}
+
 function LeftSideMenu() {
     const classes = useStyles();
     let history = useHistory();
     const location = useLocation();
-    const [value, setValue] = React.useState(PathMap2[location.pathname]);
+
+    const [value, setValue] = React.useState(getMenuIdx(location.pathname));
     const handleChange = (event, newValue) => {
         setValue(newValue);
         history.push(PathMap1[newValue]);

@@ -6,6 +6,7 @@ import ContactsIcon from "@material-ui/icons/Contacts";
 import RedditIcon from "@material-ui/icons/Reddit";
 import InfoIcon from "@material-ui/icons/Info";
 import BugReportIcon from "@material-ui/icons/BugReport";
+import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
 const variants = {
     open: {
         display: "block",
@@ -42,4 +43,5 @@ const itemLinks = [
     { link: "/service", text: "Service", icon: <RedditIcon /> },
     { link: "/portfolio", text: "Portfolio", icon: <BugReportIcon /> },
     { link: "/contact", text: "Contact", icon: <ContactsIcon /> },
+    { link: "/blog", text: "Blog", icon: <LibraryBooksIcon /> },
 ];

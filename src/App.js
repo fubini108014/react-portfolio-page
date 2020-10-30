@@ -48,7 +48,10 @@ function App() {
                                 path="/contact"
                                 component={() => <Contact />}
                             />
-                            <Route path="/blog" component={() => <Blog />} />
+                            <Route
+                                path="/blog/:pages?"
+                                component={() => <Blog />}
+                            />
                             <Route
                                 component={() => <div>404 Not found </div>}
                             />
