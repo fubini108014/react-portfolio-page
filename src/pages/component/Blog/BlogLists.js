@@ -30,9 +30,10 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: "rgba(255,255,255,.8)",
     },
     dateInfo: {
+        position: "absolute",
+        left: "71px",
+        bottom: "14px",
         color: "rgba(255,255,255,.8)",
-        margin: "5px 0",
-        display: "block",
     },
     ItemImg: {
         width: "180px",
@@ -43,18 +44,25 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "center",
         alignItems: "center",
     },
+    itemTitle: {
+        marginTop: 0,
+        "& .MuiTypography-body1": {
+            fontSize: "1.2rem",
+            cursor: "pointer",
+        },
+    },
 }));
 const blogItemLists = [
     {
-        title: "Brunch this weekend?",
+        title: "LeetCode 筆記 (python) 189. Rotate Array",
         content:
-            "Ali Connors — I'll be in your neighborhood doing errands this…",
-        date: "2020-10-28 Jan 9",
+            "題目:Given an array of size n, find the majority element. The majority element is the element that appears more than ⌊ n/2 ⌋ times.",
+        date: "2020-11-14 Jan 9",
     },
     {
-        title: "Summer BBQ",
+        title: "LeetCode 筆記 (python) 283. Move Zeroes",
         content:
-            "to Scott, Alex, Jennifer — Wish I could come, but I'm out of town this…",
+            "題目:Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements.",
         date: "2020-10-29 Jan 9",
     },
     {
@@ -91,6 +99,8 @@ export default function BlogLists() {
                             />
                         </ListItemAvatar>
                         <ListItemText
+                            onClick={() => console.log("asdasd")}
+                            className={classes.itemTitle}
                             primary={item.title}
                             secondary={
                                 <React.Fragment>
@@ -102,13 +112,11 @@ export default function BlogLists() {
                                     >
                                         {item.content}
                                     </Typography>
-                                    <span className={classes.dateInfo}>
-                                        {item.date}
-                                    </span>
                                 </React.Fragment>
                             }
                         />
                         <div className={classes.ItemImg}>image</div>
+                        <span className={classes.dateInfo}>{item.date}</span>
                     </ListItem>
                     <Divider
                         className={classes.listsDivider}

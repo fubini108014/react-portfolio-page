@@ -25,7 +25,12 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: "rgba(255,255,255,.8)",
         margin: "5px 0",
     },
-    searchBox: {},
+    searchBox: {
+        width: "200px",
+        backgroundColor: "rgba(255, 255, 255, 0.15)",
+        borderRadius: "5px",
+        //boxShadow: "inset 0 0 8px 1px #000000",
+    },
     pagination: {
         "& .Mui-selected": {
             backgroundColor: "rgb(255 255 255 / 30%)",
