@@ -45,9 +45,77 @@ const useStyles = makeStyles((theme) => ({
     },
     iconButton: { padding: 10, color: "#FFF" },
 }));
+
+const blogItemLists = [
+    {
+        title: "LeetCode 筆記 (python) 189. Rotate Array",
+        content:
+            "題目:Given an array of size n, find the majority element. The majority element is the element that appears more than ⌊ n/2 ⌋ times.",
+        date: "2020-11-14 Jan 9",
+    },
+    {
+        title: "LeetCode 筆記 (python) 283. Move Zeroes",
+        content:
+            "題目:Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements.",
+        date: "2020-10-29 Jan 9",
+    },
+    {
+        title: "Oui Oui333333333",
+        content:
+            "Sandra Adams — Do you have Paris recommendations? Have you ever…",
+        date: "2020-10-30 Jan 9",
+    },
+    {
+        title: "Brunch this weekend?444444444444444444",
+        content:
+            "Ali Connors — I'll be in your neighborhood doing errands this…",
+        date: "2020-10-31 Jan 9",
+    },
+    {
+        title: "Brunch this weekend?55555555555555",
+        content:
+            "Ali Connors — I'll be in your neighborhood doing errands this…",
+        date: "2020-10-31 Jan 9",
+    },
+    {
+        title: "Brunch this weekend?66666666666666666",
+        content:
+            "Ali Connors — I'll be in your neighborhood doing errands this…",
+        date: "2020-10-31 Jan 9",
+    },
+    {
+        title: "Brunch this weekend?77777777777777",
+        content:
+            "Ali Connors — I'll be in your neighborhood doing errands this…",
+        date: "2020-10-31 Jan 9",
+    },
+    {
+        title: "Brunch this weekend?888888888888888888",
+        content:
+            "Ali Connors — I'll be in your neighborhood doing errands this…",
+        date: "2020-10-31 Jan 9",
+    },
+    {
+        title: "Brunch this weekend?999999999999",
+        content:
+            "Ali Connors — I'll be in your neighborhood doing errands this…",
+        date: "2020-10-31 Jan 9",
+    },
+];
+const BLOG_ITEM_COUNT = 3;
+const PAGE_LENGTH = Math.ceil(blogItemLists.length / BLOG_ITEM_COUNT);
 function Blog() {
     const classes = useStyles();
-    let { pages = 0 } = useParams();
+    let { pages = 1 } = useParams();
+    const [displayItemLists, setDisplayItemLists] = React.useState([]);
+    React.useEffect(() => {
+        const newPages = parseInt(pages - 1) * BLOG_ITEM_COUNT;
+        const newLists = blogItemLists.slice(
+            newPages,
+            newPages + BLOG_ITEM_COUNT
+        );
+        setDisplayItemLists(newLists);
+    }, [pages]);
     return (
         <>
             <Slide direction="left" in={true} mountOnEnter unmountOnExit>
@@ -68,7 +136,7 @@ function Blog() {
                     <Pagination
                         page={parseInt(pages)}
                         className={classes.pagination}
-                        count={10}
+                        count={PAGE_LENGTH}
                         renderItem={(item) => (
                             <PaginationItem
                                 className={classes.paginationItem}
@@ -86,7 +154,12 @@ function Blog() {
                         className={classes.customDivider}
                         variant="fullWidth"
                     />
-                    {pages === 0 ? <BlogLists /> : <BlogPages pages={pages} />}
+                    <BlogLists itemLists={displayItemLists} />
+                    {/*pages === 0 ? (
+                        <BlogLists itemLists={displayItemLists} />
+                    ) : (
+                        <BlogPages pages={pages} />
+                    )*/}
                 </div>
             </Slide>
         </>

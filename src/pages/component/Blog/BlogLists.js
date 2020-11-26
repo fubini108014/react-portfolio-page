@@ -27,13 +27,16 @@ const useStyles = makeStyles((theme) => ({
         display: "inline",
     },
     listsDivider: {
+        marginTop: "5px",
         backgroundColor: "rgba(255,255,255,.8)",
     },
-    dateInfo: {
-        position: "absolute",
-        left: "71px",
-        bottom: "14px",
-        color: "rgba(255,255,255,.8)",
+    dateContainer: {
+        display: "flex",
+        justifyContent: "space-between",
+        margin: "5px 0",
+        color: "#FFF",
+        "& .dateInfo": {},
+        "& .viewInfo": { marginRight: "10px" },
     },
     ItemImg: {
         width: "180px",
@@ -52,45 +55,21 @@ const useStyles = makeStyles((theme) => ({
         },
     },
 }));
-const blogItemLists = [
-    {
-        title: "LeetCode 筆記 (python) 189. Rotate Array",
-        content:
-            "題目:Given an array of size n, find the majority element. The majority element is the element that appears more than ⌊ n/2 ⌋ times.",
-        date: "2020-11-14 Jan 9",
-    },
-    {
-        title: "LeetCode 筆記 (python) 283. Move Zeroes",
-        content:
-            "題目:Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements.",
-        date: "2020-10-29 Jan 9",
-    },
-    {
-        title: "Oui Oui",
-        content:
-            "Sandra Adams — Do you have Paris recommendations? Have you ever…",
-        date: "2020-10-30 Jan 9",
-    },
-    {
-        title: "Brunch this weekend?",
-        content:
-            "Ali Connors — I'll be in your neighborhood doing errands this…",
-        date: "2020-10-31 Jan 9",
-    },
-];
-export default function BlogLists() {
+
+export default function BlogLists({ itemLists = [] }) {
     const classes = useStyles();
 
     return (
         <List className={classes.root}>
             <div className={classes.Latest}>Latest</div>
-            <Divider
-                className={classes.listsDivider}
-                variant="middle"
-                component="li"
-            />
-            {blogItemLists.map((item, idx) => (
+
+            {itemLists.map((item, idx) => (
                 <React.Fragment key={idx}>
+                    <Divider
+                        className={classes.listsDivider}
+                        variant="middle"
+                        component="li"
+                    />
                     <ListItem alignItems="flex-start">
                         <ListItemAvatar>
                             <Avatar
@@ -112,17 +91,19 @@ export default function BlogLists() {
                                     >
                                         {item.content}
                                     </Typography>
+                                    <span className={classes.dateContainer}>
+                                        <span className="dateInfo">
+                                            {item.date}
+                                        </span>
+                                        <span className="viewInfo">
+                                            瀏覽45 回覆0 收藏
+                                        </span>
+                                    </span>
                                 </React.Fragment>
                             }
                         />
                         <div className={classes.ItemImg}>image</div>
-                        <span className={classes.dateInfo}>{item.date}</span>
                     </ListItem>
-                    <Divider
-                        className={classes.listsDivider}
-                        variant="middle"
-                        component="li"
-                    />
                 </React.Fragment>
             ))}
         </List>
