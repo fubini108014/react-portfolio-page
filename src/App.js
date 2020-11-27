@@ -7,7 +7,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Service from "./pages/Service";
 import Portfolio from "./pages/Portfolio";
-import Contact from "./pages/Contact";
+import Article from "./pages/Article";
 import Blog from "./pages/Blog";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 function App() {
@@ -45,12 +45,12 @@ function App() {
                                 component={() => <Portfolio />}
                             />
                             <Route
-                                path="/contact"
-                                component={() => <Contact />}
-                            />
-                            <Route
                                 path="/blog/:pages?"
                                 component={() => <Blog />}
+                            />
+                            <Route
+                                path="/article/:id?"
+                                component={() => <Article />}
                             />
                             <Route
                                 component={() => <div>404 Not found </div>}

@@ -7,7 +7,6 @@ import InfoIcon from "@material-ui/icons/Info";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import AssignmentIcon from "@material-ui/icons/Assignment";
 import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
-import PhoneInTalkIcon from "@material-ui/icons/PhoneInTalk";
 import HomeIcon from "@material-ui/icons/Home";
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -32,21 +31,19 @@ const PathMap1 = {
     1: "/about",
     2: "/service",
     3: "/portfolio",
-    4: "/contact",
-    5: "/blog",
+    4: "/blog",
 };
 const PathMap2 = {
     "/": 0,
     "/about": 1,
     "/service": 2,
     "/portfolio": 3,
-    "/contact": 4,
-    "/blog": 5,
+    "/blog": 4,
 };
 
 function getMenuIdx(path) {
-    if (path.indexOf("blog") > -1) {
-        return 5;
+    if (path.indexOf("blog") > -1 || path.indexOf("article") > -1) {
+        return 4;
     } else {
         return PathMap2[path];
     }
@@ -85,14 +82,9 @@ function LeftSideMenu() {
                     {...a11yProps(3)}
                 />
                 <Tab
-                    label="Contact"
-                    icon={<PhoneInTalkIcon />}
-                    {...a11yProps(4)}
-                />
-                <Tab
                     label="Blog"
                     icon={<LibraryBooksIcon />}
-                    {...a11yProps(5)}
+                    {...a11yProps(4)}
                 />
             </Tabs>
         </div>

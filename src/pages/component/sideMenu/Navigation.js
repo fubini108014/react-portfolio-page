@@ -2,7 +2,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import { MenuItem } from "./MenuItem";
 import HomeIcon from "@material-ui/icons/Home";
-import ContactsIcon from "@material-ui/icons/Contacts";
 import RedditIcon from "@material-ui/icons/Reddit";
 import InfoIcon from "@material-ui/icons/Info";
 import BugReportIcon from "@material-ui/icons/BugReport";
@@ -42,6 +41,5 @@ const itemLinks = [
     { link: "/about", text: "About", icon: <InfoIcon /> },
     { link: "/service", text: "Service", icon: <RedditIcon /> },
     { link: "/portfolio", text: "Portfolio", icon: <BugReportIcon /> },
-    { link: "/contact", text: "Contact", icon: <ContactsIcon /> },
     { link: "/blog", text: "Blog", icon: <LibraryBooksIcon /> },
 ];

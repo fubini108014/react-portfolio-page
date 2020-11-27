@@ -7,7 +7,12 @@ import ListItemText from "@material-ui/core/ListItemText";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
-
+import LibraryAddIcon from "@material-ui/icons/LibraryAdd";
+import ThumbUpIcon from "@material-ui/icons/ThumbUp";
+import VisibilityIcon from "@material-ui/icons/Visibility";
+import Button from "@material-ui/core/Button";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { useHistory } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
     root: {
         width: "100%",
@@ -24,7 +29,12 @@ const useStyles = makeStyles((theme) => ({
     },
     inline: {
         color: "rgba(255,255,255,0.7)",
-        display: "inline",
+        overflow: "hidden",
+        textOverflow: "ellipsis",
+        display: "-webkit-box",
+        "-webkit-line-clamp": 3,
+        "-webkit-box-orient": "vertical",
+        whiteSpace: "normal",
     },
     listsDivider: {
         marginTop: "5px",
@@ -33,10 +43,18 @@ const useStyles = makeStyles((theme) => ({
     dateContainer: {
         display: "flex",
         justifyContent: "space-between",
+        alignItems: "center",
         margin: "5px 0",
         color: "#FFF",
         "& .dateInfo": {},
         "& .viewInfo": { marginRight: "10px" },
+        "& .othersBtn": {
+            color: "#FFF",
+            padding: "4px 6px",
+            margin: "0 2px",
+            "@media (max-width:500px)": { minWidth: "40px" },
+        },
+        "& .othersIcon": { fontSize: "1.2rem", margin: "0 3px" },
     },
     ItemImg: {
         width: "180px",
@@ -58,7 +76,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function BlogLists({ itemLists = [] }) {
     const classes = useStyles();
-
+    let history = useHistory();
+    const isMobile = useMediaQuery("(max-width:500px)");
     return (
         <List className={classes.root}>
             <div className={classes.Latest}>Latest</div>
@@ -78,7 +97,7 @@ export default function BlogLists({ itemLists = [] }) {
                             />
                         </ListItemAvatar>
                         <ListItemText
-                            onClick={() => console.log("asdasd")}
+                            onClick={() => history.push("/article/" + item.id)}
                             className={classes.itemTitle}
                             primary={item.title}
                             secondary={
@@ -93,16 +112,35 @@ export default function BlogLists({ itemLists = [] }) {
                                     </Typography>
                                     <span className={classes.dateContainer}>
                                         <span className="dateInfo">
-                                            {item.date}
+                                            {`${
+                                                !isMobile
+                                                    ? item.date.M
+                                                    : item.date.M.slice(0, 3)
+                                            } ${item.date.D}`}
                                         </span>
                                         <span className="viewInfo">
-                                            瀏覽45 回覆0 收藏
+                                            <Button className="othersBtn">
+                                                <VisibilityIcon className="othersIcon" />
+                                                {!isMobile && "瀏覽 "}
+                                                {item.watch}
+                                            </Button>
+                                            <Button className="othersBtn">
+                                                <ThumbUpIcon className="othersIcon" />
+                                                {!isMobile && "讚 "}
+                                                {item.good}
+                                            </Button>
+                                            <Button className="othersBtn">
+                                                <LibraryAddIcon className="othersIcon" />
+                                                {!isMobile && "收藏"}
+                                            </Button>
                                         </span>
                                     </span>
                                 </React.Fragment>
                             }
                         />
-                        <div className={classes.ItemImg}>image</div>
+                        {!isMobile && (
+                            <div className={classes.ItemImg}>image</div>
+                        )}
                     </ListItem>
                 </React.Fragment>
             ))}
