@@ -1,7 +1,8 @@
 import styled from "styled-components";
 export const HeaderWrapper = styled.div`
-    background-color: rgba(0, 0, 0, 0.3);
-    border: 1px solid #000;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
     box-sizing: border-box;
     height: 10%;
     width: 100vw;
@@ -73,7 +74,7 @@ export const MotionMenu = styled.div`
     }
 
     & nav {
-        position: absolute;
+        position: fixed;
         top: 0;
         right: 0;
         bottom: 0;

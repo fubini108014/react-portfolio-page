@@ -28,6 +28,7 @@ export const ServiceContainer = styled.div`
         margin: 0 auto;
     }
     & .masonryItem {
+        cursor: grab;
         background: hsla(0, 0%, 100%, 0.4);
         box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px,
             rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px,

@@ -4,10 +4,10 @@ export const Layout = styled.div`
     width: 100vw;
     height: 100vh;
     background: radial-gradient(
-            63.01% 63.01% at 50% 36.99%,
-            rgba(0, 0, 0, 0.075) 12.5%,
-            rgba(0, 0, 0, 0.285) 50%,
-            rgba(0, 0, 0, 0.4) 84.38%
+            63.01% 63.01% at 50% 40.99%,
+            rgb(0 0 0 / 13%) 12.5%,
+            rgb(0 0 0 / 58%) 50%,
+            rgb(0 0 0 / 85%) 89.38%
         ),
         url(${backGroundImage});
     display: flex;
@@ -19,8 +19,6 @@ export const Layout = styled.div`
 `;
 
 export const LeftSide = styled.div`
-    background-color: rgba(0, 0, 0, 0.3);
-    border: 1px solid #000;
     box-sizing: border-box;
     color: #fff;
     width: 20%;
@@ -38,7 +36,7 @@ export const RightSide = styled.div`
     width: 80%;
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    padding: 30px 10px 50px 10px;
     overflow-x: hidden;
     overflow-y: auto;
 
@@ -63,6 +61,7 @@ export const RightSide = styled.div`
 
     @media screen and (max-width: 760px) {
         width: 100%;
+        padding: 43px 10px;
     }
 `;
 

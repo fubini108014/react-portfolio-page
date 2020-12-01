@@ -15,8 +15,8 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import QRCodeImg from "../../assets/img/QRcode.png";
 import { motion } from "framer-motion";
 const FooterWapper = styled.div`
-    background-color: rgba(0, 0, 0, 0.3);
-    border: 1px solid #000;
+    position: fixed;
+    bottom: 0;
     box-sizing: border-box;
     color: #fff;
     height: 10%;
