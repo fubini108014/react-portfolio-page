@@ -15,11 +15,9 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import QRCodeImg from "../../assets/img/QRcode.png";
 import { motion } from "framer-motion";
 const FooterWapper = styled.div`
-    position: fixed;
-    bottom: 0;
     box-sizing: border-box;
     color: #fff;
-    height: 10%;
+    height: 9%;
     width: 100%;
     font-size: 2rem;
     display: inline-flex;
@@ -84,6 +82,9 @@ const QRcodeIcon = styled.div`
     display: inline-flex;
     background-size: cover;
     background-image: url(${QRCodeImg});
+    @media screen and (max-width: 760px) {
+        display: none;
+    }
 `;
 const iconLists = [
     { title: "Email", component: <EmailIcon className="IconItem" /> },

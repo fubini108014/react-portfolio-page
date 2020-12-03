@@ -33,10 +33,10 @@ export const LeftSide = styled.div`
 `;
 
 export const RightSide = styled.div`
-    width: 80%;
+    width: 82%;
     display: flex;
     flex-direction: column;
-    padding: 30px 10px 50px 10px;
+    padding: 0px 10px;
     overflow-x: hidden;
     overflow-y: auto;
 
@@ -61,7 +61,6 @@ export const RightSide = styled.div`
 
     @media screen and (max-width: 760px) {
         width: 100%;
-        padding: 43px 10px;
     }
 `;
 

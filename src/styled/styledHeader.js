@@ -1,10 +1,8 @@
 import styled from "styled-components";
 export const HeaderWrapper = styled.div`
-    position: fixed;
-    top: 0;
     z-index: 1000;
     box-sizing: border-box;
-    height: 10%;
+    height: 9%;
     width: 100vw;
     display: flex;
     color: #fff;
@@ -19,6 +17,8 @@ export const AccountBox = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    left: 3px;
     & .accountIcon {
         margin: 7px;
         padding: 4px;
@@ -180,11 +180,12 @@ export const Others = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    right: 20px;
     & a {
         color: #fff;
     }
     & .homeIcon {
-        margin-right: 15px;
         cursor: pointer;
     }
     @media screen and (max-width: 760px) {
