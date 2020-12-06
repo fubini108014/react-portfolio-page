@@ -5,7 +5,7 @@ import styled from "styled-components";
 import FaceIcon from "@material-ui/icons/Face";
 import DoneIcon from "@material-ui/icons/Done";
 import Slide from "@material-ui/core/Slide";
-import { FadeSection } from "./component/Helper";
+import { FadeSection } from "./component/FadeSection";
 const AboutContainer = styled.div`
     color: #fff;
 `;
