@@ -40,12 +40,13 @@ const PathMap2 = {
     "/portfolio": 3,
     "/blog": 4,
 };
-
+const PathLists = ["/", "/about", "/service", "/portfolio", "/blog"];
 function getMenuIdx(path) {
     if (path.indexOf("blog") > -1 || path.indexOf("article") > -1) {
         return 4;
     } else {
         return PathMap2[path];
+        //return PathLists.indexOf(path);
     }
 }
 
@@ -58,6 +59,7 @@ function LeftSideMenu() {
     const handleChange = (event, newValue) => {
         setValue(newValue);
         history.push(PathMap1[newValue]);
+        //PathLists[newValue]
     };
     return (
         <div>
