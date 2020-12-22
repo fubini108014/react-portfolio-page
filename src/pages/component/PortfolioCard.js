@@ -7,12 +7,11 @@ import DialogContentText from "@material-ui/core/DialogContentText";
 import MuiDialogTitle from "@material-ui/core/DialogTitle";
 import VisibilityIcon from "@material-ui/icons/Visibility";
 import { ProCardContainer, Description } from "../../styled/styledPortfolio";
-import { withStyles } from "@material-ui/core/styles";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
+import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
-
-const styles = (theme) => ({
+const useStyles = makeStyles((theme) => ({
     root: {
         margin: 0,
         padding: theme.spacing(2),
@@ -23,10 +22,15 @@ const styles = (theme) => ({
         top: theme.spacing(1),
         color: theme.palette.grey[500],
     },
-});
+    launchButton: {
+        backgroundColor: "#113679",
+        "&:hover": { backgroundColor: "#1c4a9e" },
+    },
+}));
 
-const DialogTitle = withStyles(styles)((props) => {
-    const { children, onClose, classes, ...other } = props;
+const DialogTitle = ({ children, onClose, ...other }) => {
+    const classes = useStyles();
+
     return (
         <MuiDialogTitle disableTypography className={classes.root} {...other}>
             <Typography variant="h6">{children}</Typography>
@@ -41,9 +45,10 @@ const DialogTitle = withStyles(styles)((props) => {
             ) : null}
         </MuiDialogTitle>
     );
-});
+};
 
 function PortfolioCard({ text = "" }) {
+    const classes = useStyles();
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
@@ -93,8 +98,13 @@ function PortfolioCard({ text = "" }) {
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={handleClose} color="primary">
-                        Demo Site
+                    <Button
+                        onClick={handleClose}
+                        className={classes.launchButton}
+                        variant="contained"
+                        color="primary"
+                    >
+                        Launch
                     </Button>
                 </DialogActions>
             </Dialog>

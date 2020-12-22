@@ -7,7 +7,9 @@ const useStyles = makeStyles((theme) => ({
         display: "flex",
         justifyContent: "flex-start",
         flexWrap: "wrap",
-
+        "@media (max-width:760px)": {
+            justifyContent: "center",
+        },
         "& > *": {
             margin: theme.spacing(0.5),
         },
@@ -20,12 +22,12 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 //TODO: 興趣分顏色 good at 、 soso 、 basic 、
-export default function ChipGroup({ chipLists }) {
+export default function ChipGroup({ chipList }) {
     const classes = useStyles();
 
     return (
         <div className={classes.root}>
-            {chipLists.map((item) => (
+            {chipList.map((item) => (
                 <Chip
                     key={item.label}
                     icon={item.icon}

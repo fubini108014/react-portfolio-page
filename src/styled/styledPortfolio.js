@@ -15,6 +15,7 @@ export const PortfolioTitle = styled.div`
 `;
 
 export const ProCardContainer = styled.div`
+    border-radius: 3px;
     width: 180px;
     min-width: 180px;
     height: 200px;
