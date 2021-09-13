@@ -15,14 +15,14 @@ import EmailIcon from "@material-ui/icons/Email";
 import SendIcon from "@material-ui/icons/Send";
 import ChatIcon from "@material-ui/icons/Chat";
 import CloseIcon from "@material-ui/icons/Close";
-import { motion } from "framer-motion";
-const animate = { x: [-10, -4, 0, 2], opacity: [0, 0.4, 0.7, 1] };
-const animate2 = { opacity: [0, 0.4, 0.7, 1] };
-const transition = { times: [0, 0.4, 0.7, 1] };
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     root: {
         maxWidth: 345,
+
+        [theme.breakpoints.up("md")]: {
+            width: 345,
+        },
     },
     cardActions: { justifyContent: "center" },
     sendBtn: { width: "100%", letterSpacing: "5px" },
@@ -41,9 +41,9 @@ const useStyles = makeStyles({
         left: "15px",
         color: "#FFF",
     },
-});
+}));
 
-export default function ImgMediaCard({ onClose, elevation }) {
+export default function ImgMediaCard({ onClose, elevation = 0 }) {
     const classes = useStyles();
 
     return (
@@ -52,19 +52,16 @@ export default function ImgMediaCard({ onClose, elevation }) {
                 <IconButton aria-label="closeIcon" className={classes.closeBtn}>
                     <CloseIcon onClick={onClose} />
                 </IconButton>
-                <motion.div
-                    animate={animate}
-                    transition={{ ...transition, delay: 0.1 }}
+
+                <Typography
+                    gutterBottom
+                    variant="h5"
+                    component="h2"
+                    className={classes.cardContent}
                 >
-                    <Typography
-                        gutterBottom
-                        variant="h5"
-                        component="h2"
-                        className={classes.cardContent}
-                    >
-                        Contact me
-                    </Typography>
-                </motion.div>
+                    Contact me
+                </Typography>
+
                 <CardMedia
                     component="img"
                     alt="Contemplative Reptile"
@@ -73,45 +70,32 @@ export default function ImgMediaCard({ onClose, elevation }) {
                     title="Contemplative Reptile"
                 />
                 <CardContent>
-                    <motion.div
-                        animate={animate}
-                        transition={{ ...transition, delay: 0.3 }}
+                    <Typography
+                        variant="body2"
+                        color="textSecondary"
+                        component="p"
                     >
-                        <Typography
-                            variant="body2"
-                            color="textSecondary"
-                            component="p"
-                        >
-                            I hope you've enjoyed browsing my website.
-                            <br />
-                            Is there anything I can help you with?
-                        </Typography>
-                    </motion.div>
+                        I hope you've enjoyed browsing my website.
+                        <br />
+                        Is there anything I can help you with?
+                    </Typography>
                 </CardContent>
             </CardActionArea>
-            <motion.div
-                animate={animate2}
-                transition={{ ...transition, delay: 0.5 }}
-            >
-                <InputBox label="Your name" icon={<AccountCircle />} />
-                <InputBox label="Email" icon={<EmailIcon />} />
-                <InputBox label="Message" icon={<ChatIcon />} rows={3} />
-            </motion.div>
-            <motion.div
-                animate={animate2}
-                transition={{ ...transition, delay: 0.7 }}
-            >
-                <CardActions className={classes.cardActions}>
-                    <Button
-                        variant="contained"
-                        color="primary"
-                        className={classes.sendBtn}
-                        endIcon={<SendIcon />}
-                    >
-                        Send
-                    </Button>
-                </CardActions>
-            </motion.div>
+
+            <InputBox label="Your name" icon={<AccountCircle />} />
+            <InputBox label="Email" icon={<EmailIcon />} />
+            <InputBox label="Message" icon={<ChatIcon />} rows={3} />
+
+            <CardActions className={classes.cardActions}>
+                <Button
+                    variant="contained"
+                    color="primary"
+                    className={classes.sendBtn}
+                    endIcon={<SendIcon />}
+                >
+                    Send
+                </Button>
+            </CardActions>
         </Card>
     );
 }

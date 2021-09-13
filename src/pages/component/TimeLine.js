@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
     paper: {
         padding: "6px 8px 12px 10px",
         textAlign: "left",
+        backgroundColor: "#ffffffde",
     },
     hide: { display: "none" },
     show: { display: "block" },
@@ -171,8 +172,7 @@ const TimeLineItems = [
         content: [
             {
                 main: "教學助理（微積分、數學邏輯與人生通識）",
-                sub:
-                    "配合授課教師，於課後帶領學生進行 TA 課程學習之研究生教學助理",
+                sub: "配合授課教師，於課後帶領學生進行 TA 課程學習之研究生教學助理",
             },
         ],
         dot: "NCCU",
@@ -211,7 +211,7 @@ function CustomizedTimeline(props) {
     return (
         <Timeline align={over_sm ? "alternate" : "left"}>
             {TimeLineItems.map((item) => (
-                <TimelineItem>
+                <TimelineItem className="timelineItemPaper">
                     <TimelineOppositeContent
                         className={over_sm ? classes.show : classes.hide}
                     >

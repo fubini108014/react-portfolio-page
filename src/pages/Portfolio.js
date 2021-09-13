@@ -16,17 +16,19 @@ function Portfolio() {
                 >
                     <PortfolioTitle>Web design</PortfolioTitle>
                     <ScrollContainer className="scroll-container">
-                        {["A", "B", "C", "D", "E", "F", "G", "H", "I"].map(
-                            (item, idx) => (
-                                <PortfolioCard
-                                    key={`${idx}_1`}
-                                    text={`Portfolio ${item}`}
-                                />
-                            )
-                        )}
+                        {webDataSource.map((item, idx) => (
+                            <PortfolioCard
+                                key={`${idx}_1`}
+                                title={item.title}
+                                link={item.link}
+                                introduction={item.introduction}
+                                image={item.image}
+                                content={item.content}
+                            />
+                        ))}
                     </ScrollContainer>
                 </motion.div>
-                <motion.div
+                {/* <motion.div
                     animate={animate}
                     transition={{ ...transition, delay: 0.4 }}
                 >
@@ -56,7 +58,7 @@ function Portfolio() {
                         )}
                     </ScrollContainer>
                 </motion.div>
-                <motion.div
+                <motion.div 
                     animate={animate}
                     transition={{ ...transition, delay: 0.9 }}
                 >
@@ -69,10 +71,41 @@ function Portfolio() {
                             />
                         ))}
                     </ScrollContainer>
-                </motion.div>
+                </motion.div>*/}
             </PortfolioContainer>
         </Fade>
     );
 }
 
 export default Portfolio;
+
+const webDataSource = [
+    {
+        title: "元大銀行理財網 ",
+        introduction: "aaaaaa",
+        image: "yuanta",
+        link: "http://yuantabank.moneydj.com/",
+        content: "這是元大銀行理財網~~~~",
+    },
+    {
+        title: "B",
+        introduction: "bbbbbb",
+        //image: "",
+        link: "https://www.youtube.com/",
+        content: "bbbbbbb",
+    },
+    {
+        title: "C",
+        introduction: "ccccccc",
+        image: "",
+        link: "https://www.youtube.com/",
+        content: "ccccccccccc",
+    },
+    {
+        title: "D",
+        introduction: "ddddddd",
+        image: "",
+        link: "https://www.youtube.com/",
+        content: "dddddddddddd",
+    },
+];

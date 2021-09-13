@@ -6,7 +6,13 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import MuiDialogTitle from "@material-ui/core/DialogTitle";
 import VisibilityIcon from "@material-ui/icons/Visibility";
-import { ProCardContainer, Description } from "../../styled/styledPortfolio";
+
+import {
+    ProCardContainer,
+    Description,
+    Introduction,
+    PortfolioImage,
+} from "../../styled/styledPortfolio";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 import { makeStyles } from "@material-ui/core/styles";
@@ -25,6 +31,12 @@ const useStyles = makeStyles((theme) => ({
     launchButton: {
         backgroundColor: "#113679",
         "&:hover": { backgroundColor: "#1c4a9e" },
+    },
+    protfolioCardDialog: {
+        "& .MuiDialog-paperWidthSm": {
+            minHeight: "50vh",
+            minWidth: "50vw",
+        },
     },
 }));
 
@@ -47,9 +59,16 @@ const DialogTitle = ({ children, onClose, ...other }) => {
     );
 };
 
-function PortfolioCard({ text = "" }) {
+function PortfolioCard({
+    title = "",
+    link = "",
+    introduction = "",
+    content = "",
+    image = "default",
+}) {
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
+    const descriptionElementRef = React.useRef(null);
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -57,8 +76,10 @@ function PortfolioCard({ text = "" }) {
     const handleClose = () => {
         setOpen(false);
     };
+    const handleGoLanuch = (url) => {
+        window.open(url, "PortfolioCard");
+    };
 
-    const descriptionElementRef = React.useRef(null);
     React.useEffect(() => {
         if (open) {
             const { current: descriptionElement } = descriptionElementRef;
@@ -70,8 +91,10 @@ function PortfolioCard({ text = "" }) {
     return (
         <>
             <ProCardContainer onClick={handleClickOpen}>
+                <PortfolioImage imgTag={image} />
+                <Description>{title}</Description>
+                <Introduction>{introduction}</Introduction>
                 <VisibilityIcon fontSize="large" className="showModalBtn" />
-                <Description>{text}</Description>
             </ProCardContainer>
             <Dialog
                 open={open}
@@ -79,9 +102,10 @@ function PortfolioCard({ text = "" }) {
                 scroll="paper"
                 aria-labelledby="scroll-dialog-title"
                 aria-describedby="scroll-dialog-description"
+                className={classes.protfolioCardDialog}
             >
                 <DialogTitle id="scroll-dialog-title" onClose={handleClose}>
-                    專案名稱
+                    {title}
                 </DialogTitle>
                 <DialogContent dividers={true}>
                     <DialogContentText
@@ -89,17 +113,12 @@ function PortfolioCard({ text = "" }) {
                         ref={descriptionElementRef}
                         tabIndex={-1}
                     >
-                        {[...new Array(30)]
-                            .map(
-                                () =>
-                                    `文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述文字敘述`
-                            )
-                            .join("\n")}
+                        {content}
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
                     <Button
-                        onClick={handleClose}
+                        onClick={() => handleGoLanuch(link)}
                         className={classes.launchButton}
                         variant="contained"
                         color="primary"

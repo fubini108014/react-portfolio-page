@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import imageMapping from "../pages/component/ImagesCenter";
 
 export const PortfolioContainer = styled.div`
     & .scroll-container {
@@ -24,6 +25,7 @@ export const ProCardContainer = styled.div`
     cursor: pointer;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     color: #fff;
     margin: 5px;
     background-color: #113679;
@@ -79,9 +81,14 @@ export const ProCardContainer = styled.div`
         opacity: 1;
     }
 `;
-export const Description = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 50px;
+
+export const PortfolioImage = styled.div`
+    background-image: url(${(props) => imageMapping[props.imgTag]});
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 200px;
 `;
+
+export const Description = styled.div``;
+export const Introduction = styled.div``;

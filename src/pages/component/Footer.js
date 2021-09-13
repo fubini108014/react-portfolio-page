@@ -122,7 +122,7 @@ export default function Footer() {
                     aria-describedby="scroll-dialog-description"
                 >
                     <DialogContent style={{ padding: "0" }} dividers={false}>
-                        <MessageCard elevation={0} onClose={handleClose} />
+                        <MessageCard onClose={handleClose} />
                     </DialogContent>
                 </Dialog>
             )}
