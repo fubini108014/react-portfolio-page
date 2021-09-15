@@ -7,7 +7,10 @@ export const PortfolioContainer = styled.div`
         margin: 5px 0;
     }
 `;
-
+export const CardImage = styled.div`
+    width: 100%;
+`;
+export const CardInfo = styled.div``;
 export const PortfolioTitle = styled.div`
     color: #fff;
     padding: 5px 0;
@@ -17,13 +20,12 @@ export const PortfolioTitle = styled.div`
 
 export const ProCardContainer = styled.div`
     border-radius: 3px;
-    width: 180px;
-    min-width: 180px;
-    height: 200px;
+    width: calc(100% - 10px);
+    min-height: 200px;
     position: relative;
     display: flex;
     cursor: pointer;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     color: #fff;
@@ -81,14 +83,9 @@ export const ProCardContainer = styled.div`
         opacity: 1;
     }
 `;
-
-export const PortfolioImage = styled.div`
-    background-image: url(${(props) => imageMapping[props.imgTag]});
+/*background-image: url(${(props) => imageMapping[props.imgTag]});
     background-repeat: no-repeat;
-    background-size: contain;
-    width: 100%;
-    height: 200px;
-`;
+    background-size: contain; */
 
 export const Description = styled.div``;
 export const Introduction = styled.div``;

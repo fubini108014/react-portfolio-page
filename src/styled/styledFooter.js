@@ -23,9 +23,6 @@ export const CopyRight = styled.div`
     font-size: 0.5rem;
     justify-content: center;
     align-items: center;
-    @media screen and (max-width: 760px) {
-        display: none;
-    }
 `;
 
 export const MessageMe = styled.div`

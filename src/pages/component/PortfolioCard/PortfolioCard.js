@@ -6,21 +6,29 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import MuiDialogTitle from "@material-ui/core/DialogTitle";
 import VisibilityIcon from "@material-ui/icons/Visibility";
-
 import {
     ProCardContainer,
     Description,
     Introduction,
-    PortfolioImage,
-} from "../../styled/styledPortfolio";
+    CardImage,
+    CardInfo,
+} from "../../../styled/styledPortfolio";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
+import imageMapping from "../ImagesCenter";
+import clsx from "clsx";
+
 const useStyles = makeStyles((theme) => ({
     root: {
         margin: 0,
         padding: theme.spacing(2),
+    },
+    cardWrapper: {
+        "& .cardImg": {
+            width: "100%",
+        },
     },
     closeButton: {
         position: "absolute",
@@ -65,6 +73,7 @@ function PortfolioCard({
     introduction = "",
     content = "",
     image = "default",
+    className = "",
 }) {
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
@@ -89,11 +98,20 @@ function PortfolioCard({
         }
     }, [open]);
     return (
-        <>
+        <div className={clsx(className, classes.cardWrapper)}>
             <ProCardContainer onClick={handleClickOpen}>
-                <PortfolioImage imgTag={image} />
-                <Description>{title}</Description>
-                <Introduction>{introduction}</Introduction>
+                <CardImage>
+                    <img
+                        src={imageMapping[image]}
+                        className={"cardImg"}
+                        alt="Background"
+                    />
+                </CardImage>
+                <CardInfo>
+                    <Description>{title}</Description>
+                    <Introduction>{introduction}</Introduction>
+                </CardInfo>
+
                 <VisibilityIcon fontSize="large" className="showModalBtn" />
             </ProCardContainer>
             <Dialog
@@ -127,7 +145,7 @@ function PortfolioCard({
                     </Button>
                 </DialogActions>
             </Dialog>
-        </>
+        </div>
     );
 }
 

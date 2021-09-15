@@ -1,15 +1,56 @@
 import React from "react";
 import ScrollContainer from "react-indiana-drag-scroll";
-import PortfolioCard from "./component/PortfolioCard";
+import PortfolioCard from "./component/PortfolioCard/PortfolioCard";
 import { PortfolioTitle, PortfolioContainer } from "../styled/styledPortfolio";
 import { motion } from "framer-motion";
 import Fade from "@material-ui/core/Fade";
+import Masonry from "react-masonry-component";
+import { makeStyles, createStyles } from "@material-ui/core/styles";
+import clsx from "clsx";
+
 const animate = { y: [20, 13, 7, 0], opacity: [0, 0.4, 0.7, 1] };
 const transition = { times: [0, 0.4, 0.7, 1] };
+const masonryOptions = {
+    itemSelector: ".masonryItem",
+};
+
+//'xs' | 'sm' | 'md' | 'lg' | 'xl';
+const useStyles = makeStyles((theme) =>
+    createStyles({
+        masonryItem: {
+            width: "25%",
+            [theme.breakpoints.between(650, 960)]: {
+                width: "33%",
+            },
+            [theme.breakpoints.between(450, 650)]: {
+                width: "50%",
+            },
+            [theme.breakpoints.down(450)]: {
+                width: "100%",
+            },
+        },
+    })
+);
+
 function Portfolio() {
+    const classes = useStyles();
     return (
         <Fade in={true}>
-            <PortfolioContainer>
+            <Masonry className="masonryIn" options={masonryOptions}>
+                {webDataSource.map((item, idx) => (
+                    <PortfolioCard
+                        key={`${idx}_1`}
+                        title={item.title}
+                        link={item.link}
+                        introduction={item.introduction}
+                        image={item.image}
+                        content={item.content}
+                        className={clsx("masonryItem", classes.masonryItem)}
+                    />
+                ))}
+            </Masonry>
+            {/*<PortfolioContainer>
+           
                 <motion.div
                     animate={animate}
                     transition={{ ...transition, delay: 0 }}
@@ -28,7 +69,7 @@ function Portfolio() {
                         ))}
                     </ScrollContainer>
                 </motion.div>
-                {/* <motion.div
+                 <motion.div
                     animate={animate}
                     transition={{ ...transition, delay: 0.4 }}
                 >
@@ -71,8 +112,8 @@ function Portfolio() {
                             />
                         ))}
                     </ScrollContainer>
-                </motion.div>*/}
-            </PortfolioContainer>
+                </motion.div>
+            </PortfolioContainer>*/}
         </Fade>
     );
 }
@@ -90,7 +131,7 @@ const webDataSource = [
     {
         title: "B",
         introduction: "bbbbbb",
-        //image: "",
+        image: "",
         link: "https://www.youtube.com/",
         content: "bbbbbbb",
     },

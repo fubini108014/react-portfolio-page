@@ -2,10 +2,7 @@ import React from "react";
 import { Layout, Body } from "./styled/styledLayout";
 import Footer from "./pages/component/Footer";
 import Header from "./pages/component/Header";
-import {
-    VerticalNavigation,
-    SimpleBottomNavigation,
-} from "./pages/component/Navigation/Navigation";
+import { VerticalNavigation } from "./pages/component/Navigation/Navigation";
 import Home from "./pages/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Routes } from "./pages/constants/routerConfig";
@@ -47,7 +44,6 @@ function App() {
                         </Switch>
                     </RouterWrapper>
                 </Body>
-                <SimpleBottomNavigation />
                 <Footer />
             </Layout>
         </Router>

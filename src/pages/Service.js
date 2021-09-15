@@ -10,7 +10,7 @@ function Service() {
     const masonryOptions = {
         //fitWidth: true,
         itemSelector: ".masonryItem",
-        columnWidth: 160,
+        //columnWidth: 160,
         gutter: 10,
     };
 

@@ -23,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: "column",
         "& .verticalTabsNavigation": {
             borderRight: `1px solid ${theme.palette.divider}`,
+            alignItems: "center",
         },
     },
 }));
