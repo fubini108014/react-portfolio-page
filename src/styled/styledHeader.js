@@ -2,7 +2,7 @@ import styled from "styled-components";
 export const HeaderWrapper = styled.div`
     z-index: 1000;
     box-sizing: border-box;
-    height: 9%;
+    height: 8%;
     width: 100vw;
     display: flex;
     color: #fff;

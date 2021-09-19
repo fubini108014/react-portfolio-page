@@ -19,7 +19,7 @@ export const Layout = styled.div`
 `;
 
 export const Body = styled.div`
-    height: 80%;
+    height: 82%;
     display: flex;
     flex-direction: row;
     flex: 1;

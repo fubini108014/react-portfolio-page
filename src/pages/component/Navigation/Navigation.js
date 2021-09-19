@@ -37,7 +37,7 @@ function a11yProps(index) {
 
 function getMenuIdx(path) {
     if (path === "/") return 0;
-    let getRouter = Routes.find((route) => path.indexOf(route.path) > -1);
+    let getRouter = Routes.find((route) => path.indexOf(route.defaultPath) > -1);
     if (!!getRouter) {
         return getRouter.pageId;
     }
@@ -50,7 +50,7 @@ export function VerticalNavigation() {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
     const [value, setValue] = React.useState(getMenuIdx(location.pathname));
-
+    
     const handleChange = (event, newValue) => {
         setValue(newValue);
         const getRouter = Routes.find((route) => route.pageId === newValue);

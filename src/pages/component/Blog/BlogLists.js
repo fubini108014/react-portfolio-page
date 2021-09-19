@@ -13,6 +13,8 @@ import VisibilityIcon from "@material-ui/icons/Visibility";
 import Button from "@material-ui/core/Button";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useHistory } from "react-router-dom";
+import BlogContentDialog from './BlogContentDialog';
+
 const useStyles = makeStyles((theme) => ({
     root: {
         width: "100%",
@@ -78,6 +80,15 @@ export default function BlogLists({ itemLists = [] }) {
     const classes = useStyles();
     let history = useHistory();
     const isMobile = useMediaQuery("(max-width:500px)");
+    const [bolgDialog, setBolgDialog] = React.useState({open:false,blogID:''});
+
+    const handleClickOpen = (id) => {
+        setBolgDialog({open:true,blogID:id});
+    };
+    const handleClose = () => {
+        setBolgDialog({open:false,blogID:''});
+    };
+
     return (
         <List className={classes.root}>
             <div className={classes.Latest}>Latest</div>
@@ -97,7 +108,7 @@ export default function BlogLists({ itemLists = [] }) {
                             />
                         </ListItemAvatar>
                         <ListItemText
-                            onClick={() => history.push("/article/" + item.id)}
+                            onClick={() =>handleClickOpen(item.id)}
                             className={classes.itemTitle}
                             primary={item.title}
                             secondary={
@@ -144,6 +155,7 @@ export default function BlogLists({ itemLists = [] }) {
                     </ListItem>
                 </React.Fragment>
             ))}
+            <BlogContentDialog open={bolgDialog.open} blogID={bolgDialog.blogID} onClose={handleClose}/>
         </List>
     );
 }

@@ -3,7 +3,7 @@ import QRCodeImg from "../assets/img/QRcode.png";
 export const FooterWapper = styled.div`
     box-sizing: border-box;
     color: #fff;
-    height: 9%;
+    height: 8%;
     width: 100%;
     font-size: 2rem;
     display: inline-flex;
