@@ -13,7 +13,8 @@ import VisibilityIcon from "@material-ui/icons/Visibility";
 import Button from "@material-ui/core/Button";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useHistory } from "react-router-dom";
-import BlogContentDialog from './BlogContentDialog';
+import BlogContentDialog from "./BlogContentDialog";
+import imageMapping from "../ImagesCenter";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -33,20 +34,18 @@ const useStyles = makeStyles((theme) => ({
         color: "rgba(255,255,255,0.7)",
         overflow: "hidden",
         textOverflow: "ellipsis",
-        display: "-webkit-box",
-        "-webkit-line-clamp": 3,
-        "-webkit-box-orient": "vertical",
+        display: "flex",
         whiteSpace: "normal",
     },
     listsDivider: {
-        marginTop: "5px",
+        //marginTop: "5px",
         backgroundColor: "rgba(255,255,255,.8)",
     },
     dateContainer: {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        margin: "5px 0",
+        //margin: "5px 0",
         color: "#FFF",
         "& .dateInfo": {},
         "& .viewInfo": { marginRight: "10px" },
@@ -59,13 +58,18 @@ const useStyles = makeStyles((theme) => ({
         "& .othersIcon": { fontSize: "1.2rem", margin: "0 3px" },
     },
     ItemImg: {
+        minWidth: "120px",
         width: "180px",
         height: "120px",
         margin: "7px",
-        border: "1px solid #fff",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        "& .cardImg": {
+            width: "100%",
+            border: "1px solid #6b6b6b",
+            padding: "1px",
+        },
     },
     itemTitle: {
         marginTop: 0,
@@ -80,13 +84,20 @@ export default function BlogLists({ itemLists = [] }) {
     const classes = useStyles();
     let history = useHistory();
     const isMobile = useMediaQuery("(max-width:500px)");
-    const [bolgDialog, setBolgDialog] = React.useState({open:false,blogID:''});
+    const [bolgDialog, setBolgDialog] = React.useState({
+        open: false,
+        blogItem: null,
+    });
 
     const handleClickOpen = (id) => {
-        setBolgDialog({open:true,blogID:id});
+        const getBlogItem = itemLists.find((el) => el.id === id);
+        setBolgDialog({
+            open: true,
+            blogItem: !!getBlogItem ? getBlogItem : null,
+        });
     };
     const handleClose = () => {
-        setBolgDialog({open:false,blogID:''});
+        setBolgDialog({ open: false, blogItem: null });
     };
 
     return (
@@ -108,7 +119,7 @@ export default function BlogLists({ itemLists = [] }) {
                             />
                         </ListItemAvatar>
                         <ListItemText
-                            onClick={() =>handleClickOpen(item.id)}
+                            onClick={() => handleClickOpen(item.id)}
                             className={classes.itemTitle}
                             primary={item.title}
                             secondary={
@@ -120,6 +131,17 @@ export default function BlogLists({ itemLists = [] }) {
                                         color="textPrimary"
                                     >
                                         {item.content}
+                                        {!isMobile && (
+                                            <span className={classes.ItemImg}>
+                                                <img
+                                                    src={
+                                                        imageMapping[item.image]
+                                                    }
+                                                    className={"cardImg"}
+                                                    alt="Background"
+                                                />
+                                            </span>
+                                        )}
                                     </Typography>
                                     <span className={classes.dateContainer}>
                                         <span className="dateInfo">
@@ -149,13 +171,14 @@ export default function BlogLists({ itemLists = [] }) {
                                 </React.Fragment>
                             }
                         />
-                        {!isMobile && (
-                            <div className={classes.ItemImg}>image</div>
-                        )}
                     </ListItem>
                 </React.Fragment>
             ))}
-            <BlogContentDialog open={bolgDialog.open} blogID={bolgDialog.blogID} onClose={handleClose}/>
+            <BlogContentDialog
+                open={bolgDialog.open}
+                blogItem={bolgDialog.blogItem}
+                onClose={handleClose}
+            />
         </List>
     );
 }

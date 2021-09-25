@@ -8,6 +8,7 @@ export const BLOG_ITEM_LISTS = [
         id: "adsg45e6r",
         watch: "45",
         good: "10",
+        image: "yuanta",
     },
     {
         title: "LeetCode 筆記 (python) 283. Move Zeroes",
@@ -17,6 +18,7 @@ export const BLOG_ITEM_LISTS = [
         id: "asf515eg1",
         watch: "85",
         good: "15",
+        image: "default",
     },
     {
         title: "Oui Oui333333333",
@@ -26,6 +28,7 @@ export const BLOG_ITEM_LISTS = [
         id: "aresg8q",
         watch: "20",
         good: "7",
+        image: "",
     },
     {
         title: "Brunch this weekend?444444444444444444",
@@ -35,6 +38,7 @@ export const BLOG_ITEM_LISTS = [
         id: "5as4fd5as6f4",
         watch: "21",
         good: "14",
+        image: "default",
     },
     {
         title: "Brunch this weekend?55555555555555",
@@ -44,6 +48,7 @@ export const BLOG_ITEM_LISTS = [
         id: "etjh54te6ah",
         watch: "7",
         good: "3",
+        image: "",
     },
     {
         title: "Brunch this weekend?66666666666666666",
@@ -53,6 +58,7 @@ export const BLOG_ITEM_LISTS = [
         id: "asd4774wq",
         watch: "6",
         good: "1",
+        image: "",
     },
     {
         title: "Brunch this weekend?77777777777777",
@@ -62,6 +68,7 @@ export const BLOG_ITEM_LISTS = [
         id: "7sca4584as6dg",
         watch: "7",
         good: "2",
+        image: "",
     },
     {
         title: "Brunch this weekend?888888888888888888",
@@ -71,6 +78,7 @@ export const BLOG_ITEM_LISTS = [
         id: "8asd146qfwf",
         watch: "4",
         good: "1",
+        image: "",
     },
     {
         title: "Brunch this weekend?999999999999",
@@ -80,5 +88,6 @@ export const BLOG_ITEM_LISTS = [
         id: "9qwf46d5asf",
         watch: "20",
         good: "1",
+        image: "",
     },
 ];
